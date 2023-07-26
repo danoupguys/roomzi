@@ -599,6 +599,10 @@ video {
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-20 {
   height: 5rem;
 }
@@ -700,6 +704,11 @@ video {
 .border-b-\[\#A9AEAE\] {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(169 174 174 / var(--tw-border-opacity));
+}
+
+.bg-\[\#050505\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 5 5 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#070B12\] {
