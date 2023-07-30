@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="/static/css/output.css" rel="stylesheet">
+    <script src="/static/JS/pop-up.js" defer></script>
 </head>
-<body class="bg-[#09101F]">
+<body class="bg-[#09101F] ">
 
     <nav class=" mx-44 flex border-solid border-b-2 border-b-[#A9AEAE] justify-between ">    
         <div class="flex items-center">
             <div class="pr-4">
-                <div class="items-center justify-items-center flex nav-btn p-1 border-solid border-2 border-[#A9AEAE] rounded-lg">
-                    <img class="w-5 text-center" src="/static/images/login-3-svgrepo-com.svg" alt="">
-
-                    <p class="font-anjoman  text-[#A9AEAE] text-xs">ورود/ثبت نام</p>
-                </div>
+                <button onclick="openPopup()">
+                    <div class="items-center justify-items-center flex nav-btn p-1 border-solid border-2 border-[#A9AEAE] rounded-lg">
+                        <img class="w-5 text-center" src="/static/images/login-3-svgrepo-com.svg" alt="">
+                        <p class="font-anjoman  text-[#A9AEAE] text-xs">ورود/ثبت نام</p>
+                    </div>
+                </button>
             </div>
             <div class="flex bg-white text-center p-1 rounded-lg shadow-inner">
                 <img src="/static/images/SVGRepo_iconCarrier.svg" alt="" class="text-center">
@@ -23,14 +25,14 @@
             </div>
         </div>
         <div class="items-center  nav-rigt flex">
-            <p class="nav__text">درباره ما</p>
-            <p class="nav__text">آموزش بازی ها</p>
-            <p class="nav__text">ایونت ها</p>
-            <p class="nav__text">صفحه اصلی</p>
+            <a class="nav__text" href="">درباره ما</a> 
+            <a class="nav__text" href="Educations.html">آموزش بازی ها</a>
+            <a class="nav__text" href="events.html">ایونت ها</a>
+            <a class="nav__text" href="index.html">صفحه اصلی</a>
             <img src="/static/images/logo.png" alt="" class="h-20 w-12">
         </div>
     </nav>
-    <main class="mx-44 ">      
+    <main class="mx-44">      
         <div class="py-14">
             <div class="bg-[url('/static/images/Rectangle1.png')] h-[584px] bg-no-repeat bg-cover w-full relative">
                 <div class="absolute flex bottom-0 ">
@@ -102,17 +104,44 @@
             </div>
             </div>
     </main>
-    <div id="login-popup-container" class="fixed inset-0 flex justify-center items-center bg-gray-600 bg-opacity-90 hidden ">
-        <div id="login-signup" class="bg-[#09101F]   text-center rounded-3xl px-28 py-12 shadow-inner">    
+
+    <div id="Login-popup-container" onclick="closePopup(event)" class="fixed inset-0 flex justify-center items-center bg-gray-600 bg-opacity-90 hidden">
+        <div id="login-signup" class="bg-[#09101F] text-center rounded-3xl px-28 py-12 shadow-inner">    
           <form action="" class="font-anjoman">
             <img class="m-auto " src="/static/images/Roomzi-logo[Recovered].png" width="210px" alt="">
             <div class="pb-4">
               <h2 class="text-[#A9AEAE] text-4xl pb-7">ورود | ثبت نام</h2>
-              <input name="phone-number" placeholder="شماره موبایل" dir="rtl" type="text" class="p-1 rounded-lg outline-none">
+              <input maxlength="11" name="phone-number" placeholder="شماره موبایل" dir="rtl" type="text" class="p-1 rounded-lg outline-none">
             </div>
-            <input name="enter-btn" class="bg-[#B0B2B7] py-2 px-12 text-2xl rounded-xl  text-[#09101F]"  type="submit" value="ورود">
+            <input id="enter-btn" class="bg-[#B0B2B7] py-2 px-12 text-2xl rounded-xl  text-[#09101F]"  type="submit" value="ورود">
           </form>
         </div>
+    </div>
+
+    <div id="Login-popup-container" onclick="closePopup(event)" class="fixed inset-0 flex justify-center items-center bg-gray-600 bg-opacity-90 hidden">
+        <form action="" class=" font-anjoman bg-[#09101F] text-center rounded-3xl px-28 py-12 shadow-inner">
+            <img class="m-auto " src="/static/images/Roomzi-logo[Recovered].png" width="210px" alt="">
+            <p class="font-anjoman text-[#A9AEAE] text-center ">کد ارسالی را وارد نمایید</p>
+            <div class="flex justify-center py-8">
+                <div class="px-2">
+                    <input class="w-8 h-8 rounded-lg outline-none text-center" maxlength="1" type="text" name="en-code">
+                </div>         
+                <div class="px-2">
+                    <input class="w-8 h-8 rounded-lg outline-none text-center" maxlength="1" type="text" name="en-code">
+                </div>        
+                <div class="px-2">        
+                    <input class="w-8 h-8 rounded-lg outline-none text-center" maxlength="1" type="text" name="en-code">
+                </div> 
+                <div class="px-2">    
+                    <input class="w-8 h-8 rounded-lg outline-none text-center" maxlength="1" type="text" name="en-code">
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <div>
+                    <input id="enter-btn" class=" py-2 px-12 text-2xl rounded-xl  text-[#09101F]" type="button" value="تایید">
+                </div>
+            </div>
+        </form>
     </div>
     <footer class="bg-[#070B12]">
         <div class="footer-up h-60 mx-44 flex items-center justify-between">
