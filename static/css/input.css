@@ -1,26 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer components {
     .nav__text {
-      @apply font-[anjoman] font-bold text-[20px] text-[#A9AEAE] mx-4;
+        @apply font-[anjoman] font-bold text-[20px] text-[#A9AEAE] mx-4;
     }
 }
 
-@layer base{
+@layer base {
     @font-face {
         font-family: 'Anjoman';
         src: url('../fonts/Anjoman-Bold.ttf');
     }
 }
 
-@layer base{
+@layer base {
     @font-face {
         font-family: 'regular';
         src: url('../fonts/Anjoman-Regular.ttf');
     }
 }
-
-
-  
