@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20e414d8-f22e-4147-9b25-ce10ab77c50b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/events/templates/events/events.html" beforeDir="false" afterPath="$PROJECT_DIR$/events/templates/events/events.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/events.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="20e414d8-f22e-4147-9b25-ce10ab77c50b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
