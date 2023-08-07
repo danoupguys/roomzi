@@ -1,12 +1,14 @@
 {% load static %}
 <!DOCTYPE html>
 <html dir="rtl" lang="fa">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>رومزی</title>
     <link href="{% static 'css/output.css' %}" rel="stylesheet">
 </head>
+
 <body class="bg-[#09101F] text-[#A9AEAE] font-anjoman">
 
     <header class="container mx-auto border-b-2 border-b-[#A9AEAE] pt-5">
@@ -15,8 +17,10 @@
                 <img src="../static/images/logo.png" alt="logo" width="53" />
                 <nav class="ps-6 text-xl">
                     <ul class="list-none flex">
-                        <li class="pe-6 hover:drop-shadow-[0px_0px_3px_#F00]"><a href="../commons/templates/commons/index.html">صفحه اصلی</a></li>
-                        <li class="pe-6 hover:drop-shadow-[0px_0px_3px_#F00]"><a href="../events/templates/events/events.html">ایونت ها <i
+                        <li class="pe-6 hover:drop-shadow-[0px_0px_3px_#F00]"><a
+                                href="../commons/templates/commons/index.html">صفحه اصلی</a></li>
+                        <li class="pe-6 hover:drop-shadow-[0px_0px_3px_#F00]"><a
+                                href="../events/templates/events/events.html">ایونت ها <i
                                     class="fa-solid fa-chevron-down text-xs"></i></a></li>
                         <li class="pe-6 hover:drop-shadow-[0px_0px_3px_#F00]"><a href="Games.html"> بازی ها <i
                                     class="fa-solid fa-chevron-down text-xs"></i></a></li>
@@ -82,37 +86,45 @@
             </div>
         </form>
     </div>
-    <div id="signup" class="fixed inset-0 flex justify-center items-center bg-gray-600 bg-opacity-90 hidden">
-        <form dir="rtl" action="" class="text-[#A9AEAE] font-anjoman bg-[#09101F] text-center rounded-3xl px-9 py-8 ">
-            <img class="m-auto" src="/static/images/Roomzi-logo[Recovered].png" width="209px" alt="">
-            <div>
-                <div class="flex">
-                    <div>
-                        <p class="px-2">نام</p>
+    <div id="signup" class="fixed inset-0 flex justify-center items-center bg-gray-600 bg-opacity-90">
+        <form action="#" class="w-2/5 bg-[#09101F] rounded-[40px]">
+            <div class="w-1/4 mx-auto pt-6">
+                <img src="{% static 'images/Roomzi-logo[Recovered].png' %}" alt="">
+            </div>
+            <div class="w-full flex justify-evenly items-center pe-4">
+                <div class="w-[45%]">
+                    <div class="flex items-center py-4">
+                        <label class="w-3/12 text-end text-sm pe-2">نام</label>
+                        <input type="text" class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]">
                     </div>
-                    <div>
-                        <input class="w-44" name="first-name" type="text">
-                    </div>
-                    <div>
-                        <p class="px-2">نام خانوادگی</p>
-                    </div>
-                    <div>
-                        <input class="w-44" name="lasst-name" type="text">
+                    <div class="flex items-center py-4">
+                        <label class="w-3/12 text-end text-sm pe-2">ایمیل</label>
+                        <input type="text" class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]">
                     </div>
                 </div>
-                <div class="flex">
-                    <div>
-                        <p class="px-2">ایمیل</p>
+                <div class="w-[45%]">
+                    <div class="flex items-center py-4">
+                        <label class="w-5/12 text-end text-sm pe-2">نام خانوادگی</label>
+                        <input type="text" class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]">
                     </div>
-                    <div>
-                        <input class="w-44" name="email" type="email">
+                    <div class="flex items-center py-4">
+                        <label class="w-5/12 text-end text-sm pe-2">تاریخ تولد</label>
+                        <input type="date" class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]">
                     </div>
-                    <div>
-                        <p class="px-2">تاریخ تولد</p>
-                    </div>
-                    <div>
-                        <input class="w-44" name="first-name" type="date">
-                    </div>
+                </div>
+            </div>
+            <div class="mx-auto w-2/5 pt-5">
+                <div class="relative w-full text-[#09101F] text-xs">
+                    <i class="fa-solid fa-chevron-down absolute left-2 top-[48%] translate-y-[-50%]"></i>
+                    <select class="w-full outline-none text-sm py-3 px-2 rounded-lg appearance-none text-xs" style="-webkit-appearance: none;" required>
+                        <option value="" disabled selected hidden>چگونه با ما آشنا شدید؟</option>
+                        <option value="school">مدرسه</option>
+                        <option value="student">دانش اموزان</option>
+                        <option value="etc">غیره</option>
+                    </select>
+                </div>
+                <div class="pt-36 pb-7 w-2/3 mx-auto">
+                    <input type="submit" value="ثبت نام" class="bg-[#B0B2B7] text-[#09101F] w-full rounded-2xl py-2 px-9 cursor-pointer" />
                 </div>
             </div>
         </form>
