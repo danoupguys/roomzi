@@ -1,15 +1,45 @@
 {% extends "base_template.html" %}
 {% load static %}
 {% block main %}
-<div class="container m-auto">
-    <img class=" w-full py-14 text-center rounded-lg" src="/static/images/Rectangle-25.png" alt="">
-</div>
-<div>
-    <div>
-        <p>Radlands</p>
+<div class="container mx-auto">
+    <div class="py-14">
+        <div class="rounded-lg overflow-hidden">
+            <img class="w-full text-center" src="/static/images/Rectangle-25.png" alt="">
+        </div>
     </div>
-    <div>
-        <img src="/static/images/Rectangle-30.png" alt="">
+    <div class="flex justify-between items-center flex-wrap content-between">
+        <div class="w-1/5">
+            <div class="flex items-center justify-between border-4 border-[#A9AEAE] rounded-[40px] ps-9 pe-6 py-5">
+                <p class="text-5xl pe-8">UNO</p>
+                <div class="rounded-3xl border-2 border-[#A9AEAE] overflow-hidden max-w-max">
+                    <img src="{% static 'images/LRI3Rg5MKOi5AkefFaMcChNv5WitM7sz.webp' %}" class="aspect-square object-cover h-full">
+                </div>
+            </div>
+        </div>
+        <div class="w-1/5">
+            <div class="flex items-center justify-between border-4 border-[#A9AEAE] rounded-[40px] ps-9 pe-6 py-5">
+                <p class="text-5xl pe-8">UNO</p>
+                <div class="rounded-3xl border-2 border-[#A9AEAE] overflow-hidden max-w-max">
+                    <img src="{% static 'images/LRI3Rg5MKOi5AkefFaMcChNv5WitM7sz.webp' %}" class="aspect-square object-cover h-full">
+                </div>
+            </div>
+        </div>
+        <div class="w-1/5">
+            <div class="flex items-center justify-between border-4 border-[#A9AEAE] rounded-[40px] ps-9 pe-6 py-5">
+                <p class="text-5xl pe-8">UNO</p>
+                <div class="rounded-3xl border-2 border-[#A9AEAE] overflow-hidden max-w-max">
+                    <img src="{% static 'images/LRI3Rg5MKOi5AkefFaMcChNv5WitM7sz.webp' %}" class="aspect-square object-cover h-full">
+                </div>
+            </div>
+        </div>
+        <div class="w-1/5">
+            <div class="flex items-center justify-between border-4 border-[#A9AEAE] rounded-[40px] ps-9 pe-6 py-5">
+                <p class="text-5xl pe-8">UNO</p>
+                <div class="rounded-3xl border-2 border-[#A9AEAE] overflow-hidden max-w-max">
+                    <img src="{% static 'images/LRI3Rg5MKOi5AkefFaMcChNv5WitM7sz.webp' %}" class="aspect-square object-cover h-full">
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
