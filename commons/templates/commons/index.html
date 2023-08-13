@@ -1,61 +1,123 @@
-{% extends "base_template.html" %}
-{% load static %}
-{% block main %}
-        <div class="pt-14 pb-16 ">
-            <div class="bg-[url('{% static 'images/Rectangle1.png' %}')] rounded-2xl h-[884px] bg-no-repeat bg-cover w-full relative">
-                <div class="absolute flex bottom-0">
-                    <button class="p-1">
-                        <i class="fa-solid fa-circle-chevron-right text-3xl"></i>
-                    </button>
-                    <button class="p-1">
-                        <i class="fa-solid fa-circle-chevron-left text-3xl"></i>
-                    </button>
+{% extends "base_template.html" %} {% load static %} {% block main %}
+<div class="container mx-auto pt-12">
+    <div class="h-[50vh] rounded-2xl overflow-hidden relative">
+        <div data-carousel-items="1" id="events-carousel" class="w-full h-full overflow-x-scroll carousel-scrollbar flex" dir="ltr">
+            <div class="w-full flex-[0_0_auto]">
+                <img src="{% static 'images/Rectangle-25.png' %}" class="w-full h-full object-fill" alt="" />
+            </div>
+            <div class="w-full flex-[0_0_auto]">
+                <img src="{% static 'images/Rectangle-25.png' %}" class="w-full h-full object-fill" alt="" />
+            </div>
+            <div class="w-full flex-[0_0_auto]">
+                <img src="{% static 'images/Rectangle-25.png' %}" class="w-full h-full object-fill" alt="" />
+            </div>
+            <div class="w-full flex-[0_0_auto]">
+                <img src="{% static 'images/Rectangle-25.png' %}" class="w-full h-full object-fill" alt="" />
+            </div>
+        </div>
+        <div class="absolute bottom-2 left-2 flex">
+            <button data-slide="next" data-carousel-target="#events-carousel" type="button" class="rounded-full bg-[#a9aeae] w-8 h-8 text-[#020308] hover:text-[#F00] hover:drop-shadow-[0px_0px_2px_#F00] flex justify-center items-center me-1"><i class="fa-solid fa-arrow-right"></i></button>
+            <button data-slide="prev" data-carousel-target="#events-carousel" type="button" class="rounded-full bg-[#a9aeae] w-8 h-8 text-[#020308] hover:text-[#F00] hover:drop-shadow-[0px_0px_2px_#F00] flex justify-center items-center"><i class="fa-solid fa-arrow-left"></i></button>
+        </div>
+    </div>
+    <div class="pt-12 pb-16">
+        <h2 class="text-3xl font-bold pb-6">لیست بازی ها</h2>
+        <div class="pt-6 flex justify-center items-center">
+            <div>
+                <button data-slide="next" data-carousel-target="#games-carousel" type="button" class="rounded-full bg-[#a9aeae] w-10 h-10 text-[#020308] hover:text-[#F00] hover:drop-shadow-[0px_0px_1px_#F00] flex justify-center items-center"><i class="fa-solid fa-arrow-right text-xl"></i></button>
+            </div>
+            <div class="px-8 w-10/12">
+                <div data-carousel-items="7" id="games-carousel" class="flex justify-between w-full overflow-x-scroll carousel-scrollbar" dir="ltr">
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
+                    <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
+                        <img src="{% static 'images/Rectangle-25.png' %}" alt="Game" class="rounded-2xl w-full aspect-square object-fill" />
+                        <p class="text-center pt-2">Game Name</p>
+                    </div>
                 </div>
             </div>
+            <div>
+                <button data-slide="prev" data-carousel-target="#games-carousel" type="button" class="rounded-full bg-[#a9aeae] w-10 h-10 text-[#020308] hover:text-[#F00] hover:drop-shadow-[0px_0px_1px_#F00] flex justify-center items-center"><i class="fa-solid fa-arrow-left text-xl"></i></button>
+            </div>
         </div>
-        <div class="pr-12">    
-            <span class="text-2xl">لیست بازی ها</span>
-        </div>
-        <div class="flex text-center justify-center">
-            <button>    
-                <i class="fa-solid fa-circle-arrow-right text-5xl"></i>
-            </button>
-            <div class="p-3">
-                <img class="w-32 h-32 text-center rounded-2xl" src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="">
-                <p class="  text-[#A9AEAE]">مافیا</p>
-            </div>
-            <div class="p-3">
-                <img class="w-32-32 h-32 text-center rounded-2xl" src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="">
-                <p class="  text-[#A9AEAE]">مافیا</p>
-            </div>
-            <div class="p-3">
-                <img class="w-32 h-32 text-center rounded-2xl" src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="">
-                <p class="  text-[#A9AEAE]">مافیا</p>
-            </div>
-            <div class="p-3">
-                <img class="w-32 h-32 text-center rounded-2xl" src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="">
-                <p class="  text-[#A9AEAE]">مافیا</p>
-            </div>
-            <div class="p-3">
-                <img class="w-32 h-32 text-center rounded-2xl" src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="">
-                <p class="  text-[#A9AEAE]">مافیا</p>
-            </div>
-            <div class="p-3">
-                <img class="w-32 h-32 text-center rounded-2xl" src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="">
-                <p class="  text-[#A9AEAE]">مافیا</p>
-            </div>
-            <div class="p-3">
-                <img class="w-32 h-32 text-center rounded-2xl" src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="">
-                <p class="  text-[#A9AEAE]">مافیا</p>
-            </div>
-            <div class="p-3">
-                <img class="w-32 h-32 text-center rounded-2xl" src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="">
-                <p class="  text-[#A9AEAE]">مافیا</p>
-            </div>
-            <button>
-                <i class="fa-solid fa-circle-arrow-left text-5xl"></i>
-            </button>
-        </div>
-        </div>
-        </div>
-        {% endblock %}
+    </div>
+</div>
+{% endblock %}
