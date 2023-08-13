@@ -6,6 +6,10 @@
     .nav__text {
         @apply font-[anjoman] font-bold text-[20px] text-[#A9AEAE] mx-4;
     }
+
+    .carousel-scrollbar::-webkit-scrollbar {
+        @apply hidden;
+    }
 }
 
 @layer base {
