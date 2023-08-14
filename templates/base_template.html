@@ -32,11 +32,11 @@
             <div class="flex">
                 <div
                     class="flex items-center justify-between p-[7px] rounded-lg bg-[#D9D9D9] text-sm text-[#09101F] placeholder:text-[#3B404C]">
-                    <input type="text" class="outline-none bg-inherit" placeholder="جستجو..." />
+                    <input name="searchbar" type="text" class="outline-none bg-inherit" placeholder="جستجو..." />
                     <i class="fa-solid fa-magnifying-glass cursor-pointer"></i>
                 </div>
                 <button
-                    class="ms-4 p-2 border-2 border-solid border-[#A9AEAE] rounded-lg flex justify-between items-center">
+                    name="login-btn" class="ms-4 p-2 border-2 border-solid border-[#A9AEAE] rounded-lg flex justify-between items-center">
                     <span class="pe-1 text-xs">ورود/ثبت نام</span>
                     <i class="fa-solid fa-arrow-right-to-bracket" style="color:#A9AEAE;"></i>
             </div>
@@ -55,7 +55,7 @@
                     <input maxlength="11" name="phone-number" placeholder="شماره موبایل" dir="rtl" type="text"
                         class="p-1 rounded-lg outline-none">
                 </div>
-                <input id="enter-btn" class="bg-[#B0B2B7] py-2 px-12 text-2xl rounded-xl  text-[#09101F]" type="submit"
+                <input name="enter" id="enter-btn" class="bg-[#B0B2B7] py-2 px-12 text-2xl rounded-xl  text-[#09101F]" type="submit"
                     value="ورود">
             </form>
         </div>
@@ -81,7 +81,7 @@
             </div>
             <div class="flex justify-center">
                 <div>
-                    <input id="enter-btn" class=" py-2 px-12 text-2xl rounded-xl  text-[#09101F]" type="button"
+                    <input name="accept-btn" id="enter-btn" class=" py-2 px-12 text-2xl rounded-xl  text-[#09101F]" type="button"
                         value="تایید">
                 </div>
             </div>
@@ -96,21 +96,21 @@
                 <div class="w-[45%]">
                     <div class="flex items-center py-4">
                         <label class="w-3/12 text-end text-sm pe-2">نام</label>
-                        <input type="text" class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]">
+                        <input name="first-name" type="text" class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]">
                     </div>
                     <div class="flex items-center py-4">
                         <label class="w-3/12 text-end text-sm pe-2">ایمیل</label>
-                        <input type="text" class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]">
+                        <input name="email" type="text" class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]">
                     </div>
                 </div>
                 <div class="w-[45%]">
                     <div class="flex items-center py-4">
-                        <label class="w-5/12 text-end text-sm pe-2">نام خانوادگی</label>
-                        <input type="text" class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]">
+                        <label  class="w-5/12 text-end text-sm pe-2">نام خانوادگی</label>
+                        <input name="last-name" type="text" class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]">
                     </div>
                     <div class="flex items-center py-4">
                         <label class="w-5/12 text-end text-sm pe-2">تاریخ تولد</label>
-                        <input type="date" class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]">
+                        <input name="birthday-date" type="date" class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]">
                     </div>
                 </div>
             </div>
@@ -125,7 +125,8 @@
                     </select>
                 </div>
                 <div class="pt-36 pb-7 w-2/3 mx-auto">
-                    <input type="submit" value="ثبت نام" class="bg-[#B0B2B7] text-[#09101F] w-full rounded-2xl py-2 px-9 cursor-pointer" />
+                    <input name="Register-btn" type="submit" value="ثبت نام" 
+                    class="bg-[#B0B2B7] text-[#09101F] w-full rounded-2xl py-2 px-9 cursor-pointer" />
                 </div>
             </div>
         </form>
