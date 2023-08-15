@@ -39,6 +39,7 @@
                     name="login-btn" class="ms-4 p-2 border-2 border-solid border-[#A9AEAE] rounded-lg flex justify-between items-center">
                     <span class="pe-1 text-xs">ورود/ثبت نام</span>
                     <i class="fa-solid fa-arrow-right-to-bracket" style="color:#A9AEAE;"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -88,7 +89,7 @@
         </form>
     </div>
     <div id="signup" class="fixed inset-0 flex justify-center items-center bg-gray-600 bg-opacity-90 hidden">
-        <form action="#" class="w-2/5 bg-[#09101F] rounded-[40px]">
+        <form action="{% url 'signup' %}" class="w-2/5 bg-[#09101F] rounded-[40px]">
             <div class="w-1/4 mx-auto pt-6">
                 <img src="{% static 'images/Roomzi-logo[Recovered].png' %}" alt="">
             </div>
