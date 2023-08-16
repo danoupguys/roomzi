@@ -1,7 +1,5 @@
-from django.contrib.auth import login
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect
+from .forms import RegisterForm
 
 
 def signin(request):
@@ -9,4 +7,9 @@ def signin(request):
 
 
 def signup(request):
-    return HttpResponse('signup')
+    form = RegisterForm(request.POST)
+    if form.is_valid():
+        form.save()
+        return redirect("home_page")
+    else:
+        print(form.errors)
