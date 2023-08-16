@@ -7,8 +7,8 @@ from django.contrib.postgres.fields import DateRangeField, DateTimeRangeField
 class Event(BaseModel):
     title = models.TextField()
     description = models.TextField()
-    register_duration_time = DateRangeField()  # date range
-    game_duration_time = DateTimeRangeField()  # date time range
+    register_duration_time = DateRangeField()
+    game_duration_time = DateTimeRangeField()
     picture = models.TextField()
     user_limit = models.IntegerField()
     capacity = models.IntegerField()
