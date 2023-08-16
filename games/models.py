@@ -4,7 +4,6 @@ from roomzi.models import BaseModel
 
 # Create your models here.
 class Games(BaseModel):
-    id = models.IntegerField(primary_key=True)
     name = models.TextField()
     company_id = models.IntegerField()
     min_user = models.IntegerField()
@@ -19,13 +18,11 @@ class Games(BaseModel):
 
 
 class Company(BaseModel):
-    id = models.IntegerField(primary_key=True)
     name = models.TextField()
     description = models.TextField()
     logo = models.TextField()
 
 
 class Category(BaseModel):
-    id = models.IntegerField(primary_key=True)
     name = models.TextField()
     description = models.TextField()
