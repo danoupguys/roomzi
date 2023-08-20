@@ -3,7 +3,6 @@ from roomzi.models import BaseModel
 from django.contrib.postgres.fields import DateRangeField, DateTimeRangeField
 
 
-# Create your models here.
 class Event(BaseModel):
     title = models.TextField()
     description = models.TextField()

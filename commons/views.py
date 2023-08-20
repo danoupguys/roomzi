@@ -5,6 +5,5 @@ def home_page(request):
     return render(request, 'commons/index.html')
 
 
-# Create your views here.
 def about_us(request):
     return render(request, 'commons/about-us.html')

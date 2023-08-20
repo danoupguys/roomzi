@@ -2,7 +2,6 @@ from django.db import models
 from roomzi.models import BaseModel
 
 
-# Create your models here.
 class Games(BaseModel):
     name = models.TextField()
     company_id = models.IntegerField()
