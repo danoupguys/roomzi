@@ -5,7 +5,6 @@ function openPopup() {
 }
 
 function closePopup(params) {
-    params.preventDefault()
 
     console.log(params.target)
     if (params.target.id === "Login-popup-container" || params.target.id === "enter-btn") {

@@ -46,47 +46,20 @@
     <main>
         {% block main %}{% endblock %}
     </main>
-    <div id="Login-popup-container" onclick="closePopup(event)"
-        class="fixed inset-0 flex justify-center items-center bg-gray-600 bg-opacity-90 hidden">
+    <div id="Login-popup-container" onclick="closePopup()"
+        class="fixed inset-0 flex justify-center items-center bg-gray-600 bg-opacity-90 ">
         <div id="login-signup" class="bg-[#09101F] text-center rounded-3xl px-28 py-12 shadow-inner">
-            <form action="" class="font-anjoman">
+            <form method="post" action="{% url 'signin' %}" class="font-anjoman">
+                {% csrf_token %}
                 <img class="m-auto " src="/static/images/Roomzi-logo[Recovered].png" width="210px" alt="">
                 <div class="pb-4">
                     <h2 class="text-[#A9AEAE] text-4xl pb-7">ورود | ثبت نام</h2>
-                    <input maxlength="11" name="phone-number" placeholder="شماره موبایل" dir="rtl" type="text"
-                        class="p-1 rounded-lg outline-none">
+                    <input name="username" placeholder="email" dir="rtl" type="text" class="p-1 rounded-lg outline-none">
+                    <input name="password" placeholder="password" dir="rtl" type="password" class="p-1 rounded-lg outline-none">
                 </div>
-                <input name="enter" id="enter-btn" class="bg-[#B0B2B7] py-2 px-12 text-2xl rounded-xl  text-[#09101F]" type="submit"
-                    value="ورود">
+                <input name="enter" id="enter-btn" class="bg-[#B0B2B7] py-2 px-12 text-2xl rounded-xl  text-[#09101F]" type="submit" value="ورود">
             </form>
         </div>
-    </div>
-    <div id="Login-popup-container" onclick="closePopup(event)"
-        class="fixed inset-0 flex justify-center items-center bg-gray-600 bg-opacity-90 hidden">
-        <form action="{% url 'signup' %}" class=" font-anjoman bg-[#09101F] text-center rounded-3xl px-28 py-12 shadow-inner">
-            <img class="m-auto " src="/static/images/Roomzi-logo[Recovered].png" width="210px" alt="">
-            <p class="font-anjoman text-[#A9AEAE] text-center ">کد ارسالی را وارد نمایید</p>
-            <div class="flex justify-center py-8">
-                <div class="px-2">
-                    <input class="w-8 h-8 rounded-lg outline-none text-center" maxlength="1" type="text" name="en-code">
-                </div>
-                <div class="px-2">
-                    <input class="w-8 h-8 rounded-lg outline-none text-center" maxlength="1" type="text" name="en-code">
-                </div>
-                <div class="px-2">
-                    <input class="w-8 h-8 rounded-lg outline-none text-center" maxlength="1" type="text" name="en-code">
-                </div>
-                <div class="px-2">
-                    <input class="w-8 h-8 rounded-lg outline-none text-center" maxlength="1" type="text" name="en-code">
-                </div>
-            </div>
-            <div class="flex justify-center">
-                <div>
-                    <input name="accept-btn" id="enter-btn" class=" py-2 px-12 text-2xl rounded-xl  text-[#09101F]" type="button"
-                        value="تایید">
-                </div>
-            </div>
-        </form>
     </div>
     <div id="signup" class="fixed inset-0 flex justify-center items-center bg-gray-600 bg-opacity-90 hidden">
         <form action="{% url 'signup' %}" class="w-2/5 bg-[#09101F] rounded-[40px]" method="post">
