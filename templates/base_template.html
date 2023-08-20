@@ -47,7 +47,7 @@
         {% block main %}{% endblock %}
     </main>
     <div id="Login-popup-container" onclick="closePopup()"
-        class="fixed inset-0 flex justify-center items-center bg-gray-600 bg-opacity-90 ">
+        class="fixed inset-0 flex justify-center items-center bg-gray-600 bg-opacity-90 hidden">
         <div id="login-signup" class="bg-[#09101F] text-center rounded-3xl px-28 py-12 shadow-inner">
             <form method="post" action="{% url 'signin' %}" class="font-anjoman">
                 {% csrf_token %}
