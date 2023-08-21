@@ -14,9 +14,9 @@ class SocialMedia(BaseModel):
 
 class TeamMembers(BaseModel):
     Member_Choices = (
-        (1, "مدیر"),
-        (2, "برنامه نویس فرانت"),
-        (3, "برنامه نویس بک اند")
+        (1, "Manager"),
+        (2, "Front end programmer"),
+        (3, "Backend programmer")
     )
     first_name = models.TextField()
     last_name = models.TextField()

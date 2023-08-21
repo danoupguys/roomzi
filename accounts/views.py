@@ -1,9 +1,9 @@
-from django.contrib import auth
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login
 from django.contrib.auth.forms import AuthenticationForm
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from .forms import RegisterForm
+from django.shortcuts import render
 
 
 def signin(request):
@@ -23,3 +23,7 @@ def signup(request):
         return redirect("home_page")
     else:
         print(form.errors)
+
+
+def profile(request):
+    return render(request, 'accounts/profile.html')
