@@ -7,17 +7,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'css/output.css' %}">
+    <script src="{% static 'JS/games-data.js' %}"></script>
+    <script src="{% static 'JS/slider.js' %}"></script>
+    <script src="{% static 'JS/pop-up.js' %}"></script>
+    <script src="https://kit.fontawesome.com/c37d4d6158.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="bg-[#09101F] text-[#A9AEAE] font-anjoman">
-    <div class="w-1/2 float-left">
-        <div class="absolute h-[100px] w-1/5 bg-red-600 ">
-
+    <div  class="">
+        <div  class="fixed w-1/5 bg-slate-900 h-full">
+            <div class="m-auto pt-8 flex">
+                <div class="rounded-full bg-white m-auto">
+                    <svg style="padding: 10px;" width="150px" height="150px" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="6" r="4" stroke="#1C274C" stroke-width="1.5" />
+                        <path opacity="0.5"
+                            d="M20 17.5C20 19.9853 20 22 12 22C4 22 4 19.9853 4 17.5C4 15.0147 7.58172 13 12 13C16.4183 13 20 15.0147 20 17.5Z"
+                            stroke="#1C274C" stroke-width="1.5" />
+                    </svg>
+                </div>
+            </div>
+            <button name="cart-btn" class="flex m-auto py-8">
+                <div class="m-auto border-[#A9AEAE] border-solid border-2 px-4 py-5 rounded-full">
+                    <i class="fa-solid fa-basket-shopping fa-2xl"></i>
+                </div>
+            </button>
+            <ul>
+                <li>
+                    <div class="bg-slate-900 h-12 hover:bg-slate-600 rounded-md m-2 transition flex items-center justify-center ">
+                        <span class="">ویرایش پروفایل</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="bg-slate-900 h-12  hover:bg-slate-600 rounded-md m-2 transition flex items-center justify-center">
+                        <span class="text-center justify-center">تغییر رمز عبور</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="bg-slate-900 h-12  hover:bg-slate-600 rounded-md m-2 transition flex items-center justify-center">
+                        <span class="text-center justify-center">ایونت های ثبت نام شده</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="bg-slate-900 h-12  hover:bg-slate-600 rounded-md m-2 transition flex items-center justify-center">
+                        <span class="text-center justify-center">بازی های خریداری شده</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="bg-slate-900 h-12  hover:bg-slate-600 rounded-md m-2 transition flex items-center justify-center">
+                        <span class="text-center justify-center">پشتیبانی</span>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <main class="">
+        <main dir="rtl" class="">
             {% block main %}{% endblock %}
         </main>
     </div>
+
 </body>
 
 </html>
