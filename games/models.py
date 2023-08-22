@@ -2,20 +2,6 @@ from django.db import models
 from roomzi.models import BaseModel
 
 
-class Games(BaseModel):
-    name = models.TextField()
-    company_id = models.IntegerField()
-    min_user = models.IntegerField()
-    max_user = models.IntegerField()
-    min_age = models.IntegerField()
-    category = models.TextField()
-    description = models.TextField()
-    price = models.IntegerField()
-    quantity = models.IntegerField()
-    picture = models.TextField()
-    rate = models.IntegerField()
-
-
 class Company(BaseModel):
     name = models.TextField()
     description = models.TextField()
@@ -25,3 +11,17 @@ class Company(BaseModel):
 class Category(BaseModel):
     name = models.TextField()
     description = models.TextField()
+
+
+class Games(BaseModel):
+    name = models.CharField(max_length=255)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE)
+    min_user = models.IntegerField()
+    max_user = models.IntegerField()
+    min_age = models.IntegerField()
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    description = models.TextField()
+    price = models.IntegerField()
+    quantity = models.IntegerField()
+    picture = models.ImageField()
+    rate = models.SmallIntegerField()
