@@ -1,5 +1,23 @@
-{% extends "base_template.html" %}
 {% load static %}
-{% block main %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 
-    {% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/output.css' %}">
+</head>
+
+<body class="bg-[#09101F] text-[#A9AEAE] font-anjoman">
+    <div class="w-1/2 float-left">
+        <div class="absolute h-[100px] w-1/5 bg-red-600 ">
+
+        </div>
+        <main class="">
+            {% block main %}{% endblock %}
+        </main>
+    </div>
+</body>
+
+</html>
