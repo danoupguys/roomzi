@@ -7,9 +7,9 @@ class AboutUs(BaseModel):
 
 
 class SocialMedia(BaseModel):
-    title = models.TextField()
-    link = models.TextField()
-    icon = models.TextField()
+    title = models.CharField(max_length=255)
+    link = models.CharField(max_length=255)
+    icon = models.ImageField()
 
 
 class TeamMembers(BaseModel):
@@ -18,7 +18,7 @@ class TeamMembers(BaseModel):
         (2, "Front end programmer"),
         (3, "Backend programmer")
     )
-    first_name = models.TextField()
-    last_name = models.TextField()
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
     role = models.IntegerField(choices=Member_Choices)
-    picture = models.TextField()
+    picture = models.ImageField()
