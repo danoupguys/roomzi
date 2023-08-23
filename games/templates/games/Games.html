@@ -13,7 +13,7 @@
                 <div class="flex items-center justify-between border-4 border-[#A9AEAE] rounded-[40px] ps-9 pe-6 py-5">
                     <p class="text-5xl pe-8">{{ game.name }}</p>
                     <div class="rounded-3xl border-2 border-[#A9AEAE] overflow-hidden max-w-max">
-                        <img src="{% static game.picture %}" class="aspect-square object-cover h-full">
+                        <img src="{% get_media_prefix %}{{ game.picture }}" class="aspect-square object-cover h-full">
                     </div>
                 </div>
             </div>

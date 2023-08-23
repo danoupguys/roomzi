@@ -5,129 +5,17 @@
         <img src="/images/Rectangle15.png" alt="" class="m-auto" width="2065  px">
     </div>
     <div id="events-boxs" class="m-auto flex pb-10 ">
+    {% for event in events %}
         <div id="event-box" class="border-solid border-2 m-auto rounded-3xl">
             <div class="p-3 pb-4">
-                <img src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="" width="144px" class="border-solid border-[#D9D9D9] border-2 rounded-2xl">
+                <img src="{% get_media_prefix %}{{ event.picture }}" alt="" width="144px" class="border-solid border-[#D9D9D9] border-2 rounded-2xl">
             </div>
             <div class="pb-5">
-                <p class="font-anjoman text-2xl text-[#D9D9D9]">مافیا</p>
+                <p class="font-anjoman text-2xl text-[#D9D9D9]">{{ event.title }}</p>
             </div>
         </div>
-        <div id="event-box" class="border-solid border-2 m-auto rounded-3xl">
-            <div class="p-3 pb-4">
-                <img src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="" width="144px" class="border-solid border-[#D9D9D9] border-2 rounded-2xl">
-            </div>
-            <div class="pb-5">
-                <p class="font-anjoman text-2xl text-[#D9D9D9]">مافیا</p>
-            </div>
-        </div>
-        <div id="event-box" class="border-solid border-2 m-auto rounded-3xl">
-            <div class="p-3 pb-4">
-                <img src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="" width="144px" class="border-solid border-[#D9D9D9] border-2 rounded-2xl">
-            </div>
-            <div class="pb-5">
-                <p class="font-anjoman text-2xl text-[#D9D9D9]">مافیا</p>
-            </div>
-        </div>
-        <div id="event-box" class="border-solid border-2 m-auto rounded-3xl">
-            <div class="p-3 pb-4">
-                <img src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="" width="144px" class="border-solid border-[#D9D9D9] border-2 rounded-2xl">
-            </div>
-            <div class="pb-5">
-                <p class="font-anjoman text-2xl text-[#D9D9D9]">مافیا</p>
-            </div>
-        </div>
-        <div id="event-box" class="border-solid border-2 m-auto rounded-3xl">
-            <div class="p-3 pb-4">
-                <img src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="" width="144px" class="border-solid border-[#D9D9D9] border-2 rounded-2xl">
-            </div>
-            <div class="pb-5">
-                <p class="font-anjoman text-2xl text-[#D9D9D9]">مافیا</p>
-            </div>
-        </div>
+    {% endfor %}
     </div>
-    <div id="events-boxs" class="m-auto flex pb-10 ">
-        <div id="event-box" class="border-solid border-2 m-auto rounded-3xl">
-            <div class="p-3 pb-4">
-                <img src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="" width="144px" class="border-solid border-[#D9D9D9] border-2 rounded-2xl">
-            </div>
-            <div class="pb-5">
-                <p class="font-anjoman text-2xl text-[#D9D9D9]">مافیا</p>
-            </div>
-        </div>
-        <div id="event-box" class="border-solid border-2 m-auto rounded-3xl">
-            <div class="p-3 pb-4">
-                <img src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="" width="144px" class="border-solid border-[#D9D9D9] border-2 rounded-2xl">
-            </div>
-            <div class="pb-5">
-                <p class="font-anjoman text-2xl text-[#D9D9D9]">مافیا</p>
-            </div>
-        </div>
-        <div id="event-box" class="border-solid border-2 m-auto rounded-3xl">
-            <div class="p-3 pb-4">
-                <img src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="" width="144px" class="border-solid border-[#D9D9D9] border-2 rounded-2xl">
-            </div>
-            <div class="pb-5">
-                <p class="font-anjoman text-2xl text-[#D9D9D9]">مافیا</p>
-            </div>
-        </div>
-        <div id="event-box" class="border-solid border-2 m-auto rounded-3xl">
-            <div class="p-3 pb-4">
-                <img src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="" width="144px" class="border-solid border-[#D9D9D9] border-2 rounded-2xl">
-            </div>
-            <div class="pb-5">
-                <p class="font-anjoman text-2xl text-[#D9D9D9]">مافیا</p>
-            </div>
-        </div>
-        <div id="event-box" class="border-solid border-2 m-auto rounded-3xl">
-            <div class="p-3 pb-4">
-                <img src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="" width="144px" class="border-solid border-[#D9D9D9] border-2 rounded-2xl">
-            </div>
-            <div class="pb-5">
-                <p class="font-anjoman text-2xl text-[#D9D9D9]">مافیا</p>
-            </div>
-        </div>
-    </div>
-    <div id="events-boxs" class="m-auto flex pb-10 ">
-        <div id="event-box" class="border-solid border-2 m-auto rounded-3xl">
-            <div class="p-3 pb-4">
-                <img src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="" width="144px" class="border-solid border-[#D9D9D9] border-2 rounded-2xl">
-            </div>
-            <div class="pb-5">
-                <p class="font-anjoman text-2xl text-[#D9D9D9]">مافیا</p>
-            </div>
-        </div>
-        <div id="event-box" class="border-solid border-2 m-auto rounded-3xl">
-            <div class="p-3 pb-4">
-                <img src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="" width="144px" class="border-solid border-[#D9D9D9] border-2 rounded-2xl">
-            </div>
-            <div class="pb-5">
-                <p class="font-anjoman text-2xl text-[#D9D9D9]">مافیا</p>
-            </div>
-        </div>
-        <div id="event-box" class="border-solid border-2 m-auto rounded-3xl">
-            <div class="p-3 pb-4">
-                <img src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="" width="144px" class="border-solid border-[#D9D9D9] border-2 rounded-2xl">
-            </div>
-            <div class="pb-5">
-                <p class="font-anjoman text-2xl text-[#D9D9D9]">مافیا</p>
-            </div>
-        </div>
-        <div id="event-box" class="border-solid border-2 m-auto rounded-3xl">
-            <div class="p-3 pb-4">
-                <img src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="" width="144px" class="border-solid border-[#D9D9D9] border-2 rounded-2xl">
-            </div>
-            <div class="pb-5">
-                <p class="font-anjoman text-2xl text-[#D9D9D9]">مافیا</p>
-            </div>
-        </div>
-        <div id="event-box" class="border-solid border-2 m-auto rounded-3xl">
-            <div class="p-3 pb-4">
-                <img src="{% static 'images/Mafia-compressor-500x500.jpg' %}" alt="" width="144px" class="border-solid border-[#D9D9D9] border-2 rounded-2xl">
-            </div>
-            <div class="pb-5">
-                <p class="font-anjoman text-2xl text-[#D9D9D9]">مافیا</p>
-            </div>
-        </div>
-    </div>
+
+
 {% endblock %}
