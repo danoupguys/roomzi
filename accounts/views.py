@@ -27,3 +27,8 @@ def signup(request):
 
 def profile(request):
     return render(request, 'accounts/profile.html')
+
+
+def edit_password(request):
+    return render(request, 'accounts/edit_password.html')
+
