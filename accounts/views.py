@@ -32,3 +32,14 @@ def profile(request):
 def edit_password(request):
     return render(request, 'accounts/edit_password.html')
 
+
+def event_history(request):
+    return render(request, 'accounts/event_history.html')
+
+
+def games_history(request):
+    return render(request, 'accounts/games_history.html')
+
+
+def support(request):
+    return render(request, 'accounts/support.html')
