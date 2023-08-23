@@ -3,8 +3,8 @@ from games.models import Games
 
 
 def home_page(request):
-    games_aray = Games.objects.all()
-    return render(request, 'commons/index.html', {'commons': games_aray})
+    games_landing = Games.objects.all()
+    return render(request, 'commons/index.html', {'commons': games_landing})
 
 
 def about_us(request):
