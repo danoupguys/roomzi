@@ -3,13 +3,13 @@ from roomzi.models import BaseModel
 
 
 class Company(BaseModel):
-    name = models.TextField()
+    name = models.CharField()
     description = models.TextField()
-    logo = models.TextField()
+    logo = models.ImageField()
 
 
 class Category(BaseModel):
-    name = models.TextField()
+    name = models.CharField()
     description = models.TextField()
 
 
