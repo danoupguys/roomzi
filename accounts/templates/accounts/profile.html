@@ -1,12 +1,11 @@
 {% extends "accounts/profile_base_template.html" %}
-{% load static %} 
+{% load static %}
 {% block main %}
-<section class="">
-    <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
-        <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">ویرایش اطلاعات</h2>
-        <form action="#">
+<div class="w-4/5 absolute left-0 min-h-full">
+    <div class="py-8 px-4 max-w-2xl lg:py-16 relative m-auto">
+        <form action="#" class="m-auto">
+            <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white col-span-2">ویرایش اطلاعات</h2>
             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
-
                 <div class="w-full">
                     <label for="brand" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">نام کاربری
                         (username)</label>
@@ -46,7 +45,7 @@
                         عبور</label>
                     <div class="flex justify-between">
                         <div class=" w-2/3">
-                            <input type="password" name="brand" id="brand"
+                            <input disabled type="password" name="brand" id="brand" value="############"
                                 class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                 placeholder="Product brand" required="">
                         </div>
@@ -67,5 +66,5 @@
                 </div>
         </form>
     </div>
-</section>
+</div>
 {% endblock %}
