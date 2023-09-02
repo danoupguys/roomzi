@@ -9,7 +9,7 @@ class AboutUs(BaseModel):
 class SocialMedia(BaseModel):
     title = models.CharField(max_length=255)
     link = models.CharField(max_length=255)
-    icon = models.ImageField()
+    icon = models.FileField()
 
 
 class TeamMembers(BaseModel):
