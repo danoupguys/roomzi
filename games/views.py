@@ -7,5 +7,6 @@ def games(request):
     return render(request, 'games/Games.html', {'games': games_list})
 
 
-def games_data(request):
-    return render(request, 'games/Games-data.html')
+def games_data(request, game_id):
+    games_detail = Games.objects.get(id=game_id)
+    return render(request, 'games/Games-data.html', {'games_details': games_detail})
