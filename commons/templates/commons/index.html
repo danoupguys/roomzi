@@ -3,18 +3,13 @@
         <div class="h-[50vh] rounded-2xl overflow-hidden relative">
             <div data-carousel-items="1" id="events-carousel"
                  class="w-full h-full overflow-x-scroll carousel-scrollbar flex" dir="ltr">
-                <div class="w-full flex-[0_0_auto]">
-                    <img src="{% static 'images/Rectangle-25.png' %}" class="w-full h-full object-fill" alt=""/>
-                </div>
-                <div class="w-full flex-[0_0_auto]">
-                    <img src="{% static 'images/Rectangle-25.png' %}" class="w-full h-full object-fill" alt=""/>
-                </div>
-                <div class="w-full flex-[0_0_auto]">
-                    <img src="{% static 'images/Rectangle-25.png' %}" class="w-full h-full object-fill" alt=""/>
-                </div>
-                <div class="w-full flex-[0_0_auto]">
-                    <img src="{% static 'images/Rectangle-25.png' %}" class="w-full h-full object-fill" alt=""/>
-                </div>
+                {% for slider in sliders %}
+                    <div class="w-full flex-[0_0_auto]">
+                        <a href="{{ slider.link }}">
+                            <img src="{% get_media_prefix %}{{ slider.picture }}" class="w-full h-full object-fill" alt=""/>
+                        </a>
+                    </div>
+                {% endfor %}
             </div>
             <div class="absolute bottom-2 left-2 flex">
                 <button data-slide="next" data-carousel-target="#events-carousel" type="button"
@@ -40,7 +35,9 @@
                             <div class="px-2 w-[calc(100%/7)] flex-[0_0_auto]">
                                 <img src="{% get_media_prefix %}{{ game.picture }}" alt="Game"
                                      class="rounded-2xl w-full aspect-square object-fill"/>
-                                <p class="text-center pt-2">{{ game.name }}</p>
+                                <a href="{% url 'games_data' game_id=game.id %}">
+                                    <p class="text-center pt-2">{{ game.name }}</p>
+                                </a>
                             </div>
                         {% endfor %}
                     </div>
