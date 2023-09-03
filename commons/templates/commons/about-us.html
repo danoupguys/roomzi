@@ -3,122 +3,23 @@
 {% block main %}
     <div class="container mx-auto">
         <h1 class=" text-[#A9AEAE] pb-5 font-[Anjoman] text-[40px] "> مجموعه رومزی</h1>
-        <p class="text-[#A9AEAE] font-[Anjoman] text-[20px] text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-            از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
-            لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
-            کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها
-            شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این
-            صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد
-            نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار
-            گیرد.</p>
-        <div class="flex justify-between items-center flex-wrap pt-[42px]">
-            <div class="w-1/2 pe-3 pb-3"><img src="{% static 'images/20221113_163450.png' %}" class="w-full h-full"
-                                              alt=""></div>
-            <div class="w-1/2 ps-3 pb-3"><img src="{% static 'images/20221113_184439.png' %}" class="w-full h-full"
-                                              alt=""></div>
-            <div class="w-1/2 pe-3 pt-3"><img src="{% static 'images/20221116_103513(0) 1.png' %}" class="w-full h-full"
-                                              alt=""></div>
-            <div class="w-1/2 ps-3 pt-3"><img src="{% static 'images/20221116_103513(0) 2 (1).png' %}"
-                                              class="w-full h-full" alt=""></div>
-        </div>
+        {% for aboutus in AboutUs %}
+            <p class="text-[#A9AEAE] font-[Anjoman] text-[20px] text-justify">{{ aboutus.description }}</p>
+        {% endfor %}
     </div>
     <div class="container  m-auto">
-        <h2 class=" text-[#A9AEAE] pb-5 font-[Anjoman] text-[30px] pt-[97px]">اعضای تیم اجرائی</h2>
-        <div class="flex justify-between">
-            <div>
-                <img class="rounded-full w-[170px] aspect-square" src="{% static 'images/sina.jpg' %}" alt="user">
-                <div class="text-center pt-[13px]">
-                    <span class="text-[#A9AEAE] text-[30px] font-[Anjoman]">Sina <br> Front end</span>
-                </div>
-            </div>
-            <div>
-                <img class="rounded-full w-[170px] aspect-square" src="{% static 'images/saman.jpg' %}" alt="user">
-                <div class="text-center pt-[13px]">
-                    <span class="text-[#A9AEAE] text-[30px] font-[Anjoman]">Saman <br> Full Stack</span>
-                </div>
-            </div>
-            <div>
-                <img class="rounded-full w-[170px] aspect-square"
-                     src="{% static 'images/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.webp' %}"
-                     alt="user">
-                <div class="text-center pt-[13px]">
-                    <span class="text-[#A9AEAE] text-[30px] font-[Anjoman]">User <br> (roll)</span>
-                </div>
-            </div>
-            <div>
-                <img class="rounded-full w-[170px] aspect-square"
-                     src="{% static 'images/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.webp' %}"
-                     alt="user">
-                <div class="text-center pt-[13px]">
-                    <span class="text-[#A9AEAE] text-[30px] font-[Anjoman]">User <br> (roll)</span>
-                </div>
-            </div>
-            <div>
-                <img class="rounded-full w-[170px] aspect-square"
-                     src="{% static 'images/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.webp' %}"
-                     alt="user">
-                <div class="text-center pt-[13px]">
-                    <span class="text-[#A9AEAE] text-[30px] font-[Anjoman]">User <br> (roll)</span>
-                </div>
-            </div>
-            <div>
-                <img class="rounded-full w-[170px] aspect-square"
-                     src="{% static 'images/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.webp' %}"
-                     alt="user">
-                <div class="text-center pt-[13px]">
-                    <span class="text-[#A9AEAE] text-[30px] font-[Anjoman]">User <br> (roll)</span>
-                </div>
-            </div>
-
-        </div>
-        <div class="container  m-auto ">
-            <h2 class=" text-[#A9AEAE] pb-5 font-[Anjoman] text-[30px] pt-[97px]">اعضای تیم طراحی سایت</h2>
-            <div class="flex justify-between">
-                <div>
-                    <img class="rounded-full w-[170px] aspect-square" src="{% static 'images/sina.jpg' %}" alt="user">
-                    <div class="text-center pt-[13px]">
-                        <span class="text-[#A9AEAE] text-[30px] font-[Anjoman]">Sina <br> Front end</span>
+        <h2 class=" text-[#A9AEAE] pb-5 font-[Anjoman] text-[30px] pt-[97px]">اعضای تیم ما</h2>
+        <div class="flex justify-between pb-10 pt-8">
+            {% for team_members in TeamMembers %}
+                <div class="w-[calc(100%/10)]">
+                    <img class="rounded-full w-full aspect-square"
+                         src="{% get_media_prefix %}{{ team_members.picture }}" alt="user">
+                    <div class="text-center pt-3 text-[#A9AEAE] text-2xl font-[Anjoman]">
+                        <p class="pb-2">{{ team_members.first_name }}</p>
+                        <p class="text-base">{{ team_members.get_role_display }}</p>
                     </div>
                 </div>
-                <div>
-                    <img class="rounded-full w-[170px] aspect-square" src="{% static 'images/saman.jpg' %}" alt="user">
-                    <div class="text-center pt-[13px]">
-                        <span class="text-[#A9AEAE] text-[30px] font-[Anjoman]">saman <br> Full Stack</span>
-                    </div>
-                </div>
-                <div>
-                    <img class="rounded-full w-[170px] aspect-square"
-                         src="{% static 'images/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.webp' %}"
-                         alt="user">
-                    <div class="text-center pt-[13px]">
-                        <span class="text-[#A9AEAE] text-[30px] font-[Anjoman]">User <br> (roll)</span>
-                    </div>
-                </div>
-                <div>
-                    <img class="rounded-full w-[170px] aspect-square"
-                         src="{% static 'images/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.webp' %}"
-                         alt="user">
-                    <div class="text-center pt-[13px]">
-                        <span class="text-[#A9AEAE] text-[30px] font-[Anjoman]">User <br> (roll)</span>
-                    </div>
-                </div>
-                <div>
-                    <img class="rounded-full w-[170px] aspect-square"
-                         src="{% static 'images/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.webp' %}"
-                         alt="user">
-                    <div class="text-center pt-[13px]">
-                        <span class="text-[#A9AEAE] text-[30px] font-[Anjoman]">User <br> (roll)</span>
-                    </div>
-                </div>
-                <div>
-                    <img class="rounded-full w-[170px] aspect-square"
-                         src="{% static 'images/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.webp' %}"
-                         alt="user">
-                    <div class="text-center pt-[13px]">
-                        <span class="text-[#A9AEAE] text-[30px] font-[Anjoman]">User <br> (roll)</span>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
         <div class="container  m-auto ">
             <h2 class=" text-[#A9AEAE] pb-5 font-[Anjoman] text-[30px] pt-[97px]">راه های ارتباطی با ما</h2>
@@ -128,7 +29,7 @@
                         <a href="{{ social_media.link }}">
                             <div class="w-full">
                                 <img src="{% get_media_prefix %}{{ socisl_media.icon }}"
-                                     class="object-fill aspect-square" alt="">
+                                     class="w-full object-fill aspect-square" alt="">
                             </div>
                             <div class="text-center pt-[24px]">
                                 <span class="text-[#A9AEAE] text-[30px] font-[Anjoman]">{{ socisl_media.title }}</span>
