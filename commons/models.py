@@ -15,8 +15,8 @@ class SocialMedia(BaseModel):
 class TeamMembers(BaseModel):
     Member_Choices = (
         (1, "Manager"),
-        (2, "Front end programmer"),
-        (3, "Backend programmer")
+        (2, "Front-End programmer"),
+        (3, "Back-End programmer")
     )
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
