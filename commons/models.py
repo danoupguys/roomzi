@@ -2,6 +2,12 @@ from django.db import models
 from roomzi.models import BaseModel
 
 
+class SliderLanding(BaseModel):
+    picture = models.ImageField()
+    link = models.CharField(max_length=255)
+    order = models.IntegerField()
+
+
 class AboutUs(BaseModel):
     description = models.TextField()
 
@@ -22,3 +28,7 @@ class TeamMembers(BaseModel):
     last_name = models.CharField(max_length=255)
     role = models.IntegerField(choices=Member_Choices)
     picture = models.ImageField()
+
+    @property
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
