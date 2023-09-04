@@ -7,10 +7,16 @@ class Company(BaseModel):
     description = models.TextField()
     logo = models.ImageField()
 
+    def __str__(self):
+        return self.name
+
 
 class Category(BaseModel):
     name = models.CharField()
     description = models.TextField()
+
+    def __str__(self):
+        return self.name
 
 
 class Games(BaseModel):
