@@ -2,17 +2,19 @@
 {% load static %}
 {% block main %}
     <div class="py-14 m-auto">
-        <img src="/images/Rectangle15.png" alt="" class="m-auto" width="2065  px">
+        <img src="{% static 'images/Rectangle-25.png' %}" alt="" class="m-auto" width="2065  px">
     </div>
     <div id="events-boxs" class="m-auto flex pb-10 ">
     {% for event in events %}
         <div id="event-box" class="border-solid border-2 m-auto rounded-3xl">
+        <a href="{% url 'event_detail' event_id=event.id %}">
             <div class="p-3 pb-4">
                 <img src="{% get_media_prefix %}{{ event.picture }}" alt="" width="144px" class="border-solid border-[#D9D9D9] border-2 rounded-2xl">
             </div>
             <div class="pb-5">
                 <p class="font-anjoman text-2xl text-[#D9D9D9]">{{ event.title }}</p>
             </div>
+        </a>
         </div>
     {% endfor %}
     </div>
