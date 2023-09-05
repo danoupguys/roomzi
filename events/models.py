@@ -1,4 +1,5 @@
 from django.db import models
+from games.models import Games
 from roomzi.models import BaseModel
 from django.contrib.postgres.fields import DateRangeField, DateTimeRangeField
 from accounts.models import CustomUser
@@ -8,12 +9,14 @@ class Event(BaseModel):
     title = models.CharField(max_length=255)
     description = models.TextField()
     register_duration_time = DateRangeField()
-    game_duration_time = DateTimeRangeField()
+    start_time = models.TimeField()
+    end_time = models.TimeField()
     picture = models.ImageField()
     user_limit = models.IntegerField()
     capacity = models.IntegerField()
     price = models.IntegerField()
     rate = models.PositiveIntegerField()
+    game = models.ForeignKey(Games, on_delete=models.CASCADE)
 
 
 class Slider(BaseModel):

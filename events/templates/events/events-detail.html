@@ -1,59 +1,65 @@
 {% extends "base_template.html" %}
 {% load static %}
+
 {% block main %}
-    <div class="container mx-auto">
-        <div class="pt-40 pb-40">
-            <p class="text-center text-5xl text-[#A9AEAE] font-anjoman ">رویداد مافیا</p>
-            <div class="pt-7 px-[360px] ">
-                <div class=" border-2 pt-[58px] pb-[41px] px-8 rounded-xl ">
-                    <div class="flex justify-between border-2 rounded-xl">
-                        <div>
-                            <p class="p-3 font-anjoman text-[#A9AEAE] text-3xl">ظرفیت</p>
-                        </div>
-                        <div>
-                            <p class="p-3 font-anjoman text-[#FF0000] text-3xl">15 نفر</p>
-                        </div>
+<div class="container mx-auto">
+    <div class="pt-40 pb-40">
+        <p class="text-center text-5xl text-[#A9AEAE] font-anjoman ">{{ event_detail.title }}</p>
+        <div class="pt-7 px-[360px] ">
+            <div class=" border-2 pt-[58px] pb-[41px] px-8 rounded-xl ">
+                <div class="flex justify-between border-2 rounded-xl">
+                    <div>
+                        <p class="p-3 font-anjoman text-[#A9AEAE] text-3xl">ظرفیت</p>
                     </div>
-                    <div class="flex justify-between border-2 rounded-xl mt-9">
-                        <div>
-                            <p class="p-3 font-anjoman text-[#A9AEAE] text-3xl">ساعت</p>
-                        </div>
-                        <div>
-                            <p class="p-3 font-anjoman text-[#FF0000] text-3xl">12 الی 14</p>
-                        </div>
+                    <div>
+                        <p class="p-3 font-anjoman text-[#FF0000] text-3xl">{{ event_detail.user_limit }} نفر</p>
                     </div>
-                    <div class="flex justify-between border-2 rounded-xl mt-9">
-                        <div>
-                            <p class="p-3 font-anjoman text-[#A9AEAE] text-3xl">مهلت ثبت نام</p>
-                        </div>
-                        <div>
-                            <p class="p-3 font-anjoman text-[#FF0000] text-3xl">12 الی 17 مهر</p>
-                        </div>
+                </div>
+                <div class="flex justify-between border-2 rounded-xl mt-9">
+                    <div>
+                        <p class="p-3 font-anjoman text-[#A9AEAE] text-3xl">ساعت</p>
                     </div>
-                    <div class="flex justify-between border-2 rounded-xl mt-9">
-                        <div>
-                            <p class="p-3 font-anjoman text-[#A9AEAE] text-3xl">مبلغ ورودی</p>
-                        </div>
-                        <div>
-                            <p class="p-3 font-anjoman text-[#FF0000] text-3xl text-left">50.000 تومان</p>
-                        </div>
+                    <div>
+                        <p class="p-3 font-anjoman text-[#FF0000] text-3xl"> {{ event_detail.end_time|truncatewords:'1' }} | الی | {{ event_detail.start_time|truncatewords:'1' }}</p>
                     </div>
-                    <div class=" flex justify-between items-center border-2 rounded-xl mt-9">
-                        <div class="px-6">
-                            <p class="p-3 font-anjoman text-[#A9AEAE] text-3xl">جایزه نفر اول</p>
-                        </div>
-                        <div class="py-6 pl-5">
-                            <img class="rounded-lg" src="{% static 'images\gift-pic.png' %}" alt="gift-pic">
-                        </div>
+                </div>
+                <div class="flex justify-between border-2 rounded-xl mt-9">
+                    <div>
+                        <p class="p-3 font-anjoman text-[#A9AEAE] text-3xl">مهلت ثبت نام</p>
                     </div>
-                    <div class="flex justify-center pt-9">
-                        <button class=" bg-[#D9D9D9] text-[#09101F] rounded-2xl w-2/5 py-4 mx-2 text-2xl">آموزش بازی
-                            <i class="fa-solid fa-circle-question"></i></button>
-                        <button class=" bg-[#D9D9D9] text-[#09101F] rounded-2xl w-2/5 py-4 mx-2 text-2xl">ثبت نام/پرداخت
-                            <i class="fa-solid fa-sack-dollar"></i></button>
+                    <div>
+                        <p class="p-3 font-anjoman text-[#FF0000] text-3xl">{{ register_duration_time_str }}</p>
                     </div>
+                </div>
+                <div class="flex justify-between border-2 rounded-xl mt-9">
+                    <div>
+                        <p class="p-3 font-anjoman text-[#A9AEAE] text-3xl">مبلغ ورودی</p>
+                    </div>
+                    <div>
+                        <p class="p-3 font-anjoman text-[#FF0000] text-3xl text-left">{{ event_detail.price }}</p>
+                    </div>
+                </div>
+                <div class=" flex justify-between items-center border-2 rounded-xl mt-9">
+                    <div class="px-6">
+                        <p class="p-3 font-anjoman text-[#A9AEAE] text-3xl">جایزه نفر اول</p>
+                    </div>
+                    <div class="py-6 pl-5">
+                        <img class="rounded-lg" src="{% get_media_prefix %}{{ event_detail.picture }}" alt="gift-pic">
+                    </div>
+
+                </div>
+                <div class="flex justify-center pt-9">
+                    <a href="{% url 'games_data' game_id=event_detail.game.id %}">
+                    <button class=" bg-[#D9D9D9] text-[#09101F] rounded-2xl w-2/5 py-4 mx-2 text-2xl"> آموزش بازی</a>
+                        <i class="fa-solid fa-circle-question"></i></button>
+
+                    <a href="https://idpay.ir/vps-crack">
+                    <button class=" bg-[#D9D9D9] text-[#09101F] rounded-2xl w-2/5 py-4 mx-2 text-2xl">ثبت نام/پرداخت</a>
+                        <i class="fa-solid fa-sack-dollar"></i></button>
+
                 </div>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
