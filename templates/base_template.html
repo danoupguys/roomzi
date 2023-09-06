@@ -30,11 +30,13 @@
                 </nav>
             </div>
             <div class="flex">
-                <div
-                    class="flex items-center justify-between p-[7px] rounded-lg bg-[#D9D9D9] text-sm text-[#09101F] placeholder:text-[#3B404C]">
+                <form
+                    class="flex items-center justify-between p-[7px] rounded-lg bg-[#D9D9D9] text-sm text-[#09101F] placeholder:text-[#3B404C]" action="{% url 'result' %}">
                     <input name="searchbar" type="text" class="outline-none bg-inherit" placeholder="جستجو..." />
-                    <i class="fa-solid fa-magnifying-glass cursor-pointer"></i>
-                </div>
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass cursor-pointer"></i>
+                    </button>
+                </form>
                 <button
                     name="login-btn" class="ms-4 p-2 border-2 border-solid border-[#A9AEAE] rounded-lg flex justify-between items-center">
                     <span class="pe-1 text-xs">ورود/ثبت نام</span>
