@@ -28,5 +28,4 @@ class Slider(BaseModel):
 
 class Reservestion(BaseModel):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    status = models.IntegerField()
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
