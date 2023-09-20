@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-vfyp+&&@ab32!z+u2*!ruwu*^mu$4o53%u+p#kyn#6q%$&dp+=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['roomzi.ir', '127.0.0.1', 'localhost']
 
 # Application definition
 
