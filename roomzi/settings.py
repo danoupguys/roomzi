@@ -82,9 +82,9 @@ WSGI_APPLICATION = 'roomzi.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "db_roomzi",
-        "USER": "postgres",
-        "PASSWORD": "Farzin_1384",
+        "NAME": "roomzi_db",
+        "USER": "roomzi",
+        "PASSWORD": "r00mz1SecP",
         "HOST": "localhost",
         "PORT": "5432",
     }
