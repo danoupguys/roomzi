@@ -10,7 +10,7 @@
     <link href="{% static 'css/output.css' %}" rel="stylesheet">
 </head>
 
-<body class="bg-[#09101F] text-[#A9AEAE] font-anjoman">
+<body class="bg-[#09101F] text-[#A9AEAE] font-vazir">
 
     <header class="container mx-auto border-b-2 border-b-[#A9AEAE] pt-5 max-w-5x1">
         <div class="flex justify-between items-center">
@@ -51,7 +51,7 @@
     <div id="Login-popup-container" onclick="closePopup()"
         class="fixed inset-0 flex justify-center items-center bg-gray-600 bg-opacity-90 hidden">
         <div id="login-signup" class="bg-[#09101F] text-center rounded-3xl px-28 py-12 shadow-inner">
-            <form method="post" action="{% url 'signin' %}" class="font-anjoman">
+            <form method="post" action="{% url 'signin' %}" class="font-vazir">
                 {% csrf_token %}
                 <img class="m-auto " src="/static/images/Roomzi-logo[Recovered].png" width="210px" alt="">
                 <div class="pb-4">
@@ -124,16 +124,16 @@
         <div class="footer-up h-60 mx-44 flex items-center justify-between">
             <div class="about text-center">
                 <h3 class="text-[#A9AEAE]">درباره ما</h3>
-                <p dir="rtl" class="w-52 text-white text-center font[Vazir]">
+                <p dir="rtl" class="w-52 text-white text-center font-vazir">
                     مجموعه رومزی یک اتاق جهت انجام بازی های رومیزی(Board games) و گروهی است که برای اولین بار در هنرستان
                     باقرالعلوم افتتاح شد.
                 </p>
             </div>
             <div class="questions text-center">
                 <h3 class="text-[#A9AEAE]">سوالات متداول</h3>
-                <p class="text-white my-2 font-[Vazir]">لورم ایپسوم متن ساختگی با تولید سادگی</p>
-                <p class="text-white my-2 font-[Vazir]">لورم ایپسوم متن ساختگی با تولید سادگی</p>
-                <p class="text-white my-2 font-[Vazir]">لورم ایپسوم متن ساختگی با تولید سادگی</p>
+                <p class="text-white my-2 font-vazir">لورم ایپسوم متن ساختگی با تولید سادگی</p>
+                <p class="text-white my-2 font-vazir">لورم ایپسوم متن ساختگی با تولید سادگی</p>
+                <p class="text-white my-2 font-vazir">لورم ایپسوم متن ساختگی با تولید سادگی</p>
             </div>
             <div class="social-media">
                 <div class="my-4 instagram flex">

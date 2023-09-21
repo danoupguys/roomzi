@@ -14,14 +14,23 @@
 
 @layer base {
     @font-face {
-        font-family: 'Anjoman';
-        src: url('../fonts/Anjoman-Bold.ttf');
+        font-family: "Vazir";
+        src: url("../fonts/eot/Vazir.eot");
+        src: url("../fonts/eot/Vazir.eot#iefix") format("embedded-opentype"), url("../fonts/woff2/Vazir.woff2") format("woff2"), url("../fonts/woff/Vazir.woff") format("woff"), url("../fonts/ttf/Vazir.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
     }
-}
 
-@layer base {
     @font-face {
-        font-family: 'Vazir';
-        src: url('../fonts/Vazir.ttf');
+        font-family: "Vazir";
+        src: url("../fonts/eot/Vazir-Bold.eot");
+        src: url("../fonts/eot/Vazir-Bold.eot#iefix") format("embedded-opentype"), url("../fonts/woff2/Vazir-Bold.woff2") format("woff2"), url("../assets/fonts/woff/Vazir-Bold.woff") format("woff"), url("../assets/fonts/ttf/Vazir-Bold.ttf") format("truetype");
+        font-weight: bold;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: "Anjoman";
+        src: url("../fonts/Anjoman-Bold.ttf");
     }
 }

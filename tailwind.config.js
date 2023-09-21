@@ -5,6 +5,7 @@ module.exports = {
     extend: {},
     fontFamily: {
       anjoman: ['anjoman'],
+      vazir: ['Vazir']
     }
   },
   plugins: [],
