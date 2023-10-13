@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-vfyp+&&@ab32!z+u2*!ruwu*^mu$4o53%u+p#kyn#6q%$&dp+='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['roomzi.ir', '127.0.0.1', 'localhost']
 CSRF_TRUSTED_ORIGINS = ['https://roomzi.ir']
