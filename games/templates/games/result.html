@@ -1,0 +1,25 @@
+{% extends "base_template.html" %}
+{% load static %}
+{% block main %}
+<div class="container mx-auto">
+    <div class="py-14">
+        <div class="rounded-lg overflow-hidden">
+            <img class="w-full text-center" src="/static/images/Rectangle-25.png" alt="">
+        </div>
+    </div>
+    <div class="flex justify-between items-center flex-wrap content-between">
+        {% for result in results %}
+            <div class="w-1/5">
+                <a href="{% url 'games_data' game_id=result.id %}">
+                    <div class="flex items-center justify-between border-4 border-[#A9AEAE] rounded-[40px] ps-9 pe-6 py-5">
+                        <p class="text-5xl pe-8">{{ result.name }}</p>
+                        <div class="rounded-3xl border-2 border-[#A9AEAE] overflow-hidden max-w-max">
+                            <img src="{% get_media_prefix %}{{ result.picture }}" class="aspect-square object-cover h-full">
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -85,8 +85,8 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "roomzi_db",
-        "USER": "roomzi",
-        "PASSWORD": "r00mz1SecP",
+        "USER": "postgres",
+        "PASSWORD": "Farzin_1384",
         "HOST": "localhost",
         "PORT": "5432",
     }
