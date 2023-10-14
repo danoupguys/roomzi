@@ -31,3 +31,5 @@ class Games(BaseModel):
     quantity = models.IntegerField()
     picture = models.ImageField()
     rate = models.SmallIntegerField()
+    def __str__(self):
+        return self.name

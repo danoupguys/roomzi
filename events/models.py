@@ -17,6 +17,8 @@ class Event(BaseModel):
     price = models.IntegerField()
     rate = models.PositiveIntegerField()
     game = models.ForeignKey(Games, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.title
 
 
 class Slider(BaseModel):
@@ -24,6 +26,8 @@ class Slider(BaseModel):
     picture = models.ImageField()
     link = models.CharField(max_length=255)
     order = models.IntegerField()
+    def __str__(self):
+        return self.title
 
 
 class Reservestion(BaseModel):
