@@ -7,9 +7,15 @@ class SliderLanding(BaseModel):
     link = models.CharField(max_length=255)
     order = models.IntegerField()
 
+    class Meta:
+        verbose_name = 'SliderLanding'
+
 
 class AboutUs(BaseModel):
     description = models.TextField()
+
+    class Meta:
+        verbose_name = 'AboutUs'
 
 
 class SocialMedia(BaseModel):
@@ -28,6 +34,9 @@ class TeamMembers(BaseModel):
     last_name = models.CharField(max_length=255)
     role = models.IntegerField(choices=Member_Choices)
     picture = models.ImageField()
+
+    class Meta:
+        verbose_name = 'TeamMembers'
 
     @property
     def full_name(self):

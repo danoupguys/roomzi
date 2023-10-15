@@ -7,6 +7,9 @@ class Company(BaseModel):
     description = models.TextField()
     logo = models.ImageField()
 
+    class Meta:
+        verbose_name = 'Company'
+
     def __str__(self):
         return self.name
 
@@ -14,6 +17,9 @@ class Company(BaseModel):
 class Category(BaseModel):
     name = models.CharField()
     description = models.TextField()
+
+    class Meta:
+        verbose_name = 'Category'
 
     def __str__(self):
         return self.name
@@ -31,5 +37,8 @@ class Games(BaseModel):
     quantity = models.IntegerField()
     picture = models.ImageField()
     rate = models.SmallIntegerField()
+
+    class Meta:
+        verbose_name = 'Games'
     def __str__(self):
         return self.name
