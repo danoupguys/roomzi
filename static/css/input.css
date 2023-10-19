@@ -7,8 +7,54 @@
         @apply font-[anjoman] font-bold text-[20px] text-[#A9AEAE] mx-4;
     }
 
+    .carousel-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
     .carousel-scrollbar::-webkit-scrollbar {
         @apply hidden;
+    }
+
+    .game-card {
+        @apply flex w-1/2 sm:w-1/3 py-5;
+    }
+
+    .game-card:nth-child(2n - 1) {
+        @apply justify-start;
+    }
+
+    .game-card:nth-child(2n) {
+        @apply justify-end;
+    }
+
+    .game-card:nth-child(3n - 2) {
+        @apply sm:justify-start;
+    }
+
+    .game-card:nth-child(3n - 1),
+    .game-card:nth-child(3n - 2):last-child {
+        @apply sm:justify-center;
+    }
+
+    .game-card:nth-child(3n) {
+        @apply sm:justify-end;
+    }
+
+    .team-member-card {
+        @apply sm:ms-[calc(100%/8)] md:ms-[calc(100%/15)] lg:ms-[calc(100%/9)] xl:ms-0;
+    }
+
+    .team-member-card:nth-child(4n - 3) {
+        @apply md:ms-0;
+    }
+
+    .team-member-card:nth-child(3n - 2) {
+        @apply ms-0;
+    }
+
+    .team-member-card:nth-child(3n - 2):not(:nth-child(4n - 3)) {
+        @apply md:ms-[calc(100%/15)] lg:ms-[calc(100%/9)] xl:ms-0;
     }
 }
 
@@ -28,9 +74,15 @@
         font-weight: bold;
         font-style: normal;
     }
-    
+
     @font-face {
         font-family: "Anjoman";
         src: url("../fonts/Anjoman-Bold.ttf");
+    }
+
+    body {
+        font-family: "Vazir";
+        color: #a9aeae;
+        background-color: #09101f;
     }
 }

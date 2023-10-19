@@ -1,63 +1,54 @@
-{% extends "base_template.html" %}
-{% load static %}
+{% extends "base_template.html" %} {% load static %} {% block main %}
+<div class="container mx-auto py-12 px-3 md:px-0">
+    <div class="pb-6">
+        <h1 class="text-center font-bold text-3xl md:text-4xl xl:text-5xl">{{ event_detail.title }}</h1>
+    </div>
 
-{% block main %}
-<div class="container mx-auto">
-    <div class="pt-40 pb-40">
-        <p class="text-center text-5xl text-[#A9AEAE] font-anjoman ">{{ event_detail.title }}</p>
-        <div class="pt-7 px-[360px] ">
-            <div class=" border-2 pt-[58px] pb-[41px] px-8 rounded-xl ">
-                <div class="flex justify-between border-2 rounded-xl">
-                    <div>
-                        <p class="p-3 font-anjoman text-[#A9AEAE] text-3xl">ظرفیت</p>
-                    </div>
-                    <div>
-                        <p class="p-3 font-anjoman text-[#FF0000] text-3xl">{{ event_detail.user_limit }} نفر</p>
-                    </div>
-                </div>
-                <div class="flex justify-between border-2 rounded-xl mt-9">
-                    <div>
-                        <p class="p-3 font-anjoman text-[#A9AEAE] text-3xl">ساعت</p>
-                    </div>
-                    <div>
-                        <p class="p-3 font-anjoman text-[#FF0000] text-3xl"> {{ event_detail.end_time|truncatewords:'1' }} | الی | {{ event_detail.start_time|truncatewords:'1' }}</p>
-                    </div>
-                </div>
-                <div class="flex justify-between border-2 rounded-xl mt-9">
-                    <div>
-                        <p class="p-3 font-anjoman text-[#A9AEAE] text-3xl">مهلت ثبت نام</p>
-                    </div>
-                    <div>
-                        <p class="p-3 font-anjoman text-[#FF0000] text-3xl">{{ register_duration_time_str }}</p>
-                    </div>
-                </div>
-                <div class="flex justify-between border-2 rounded-xl mt-9">
-                    <div>
-                        <p class="p-3 font-anjoman text-[#A9AEAE] text-3xl">مبلغ ورودی</p>
-                    </div>
-                    <div>
-                        <p class="p-3 font-anjoman text-[#FF0000] text-3xl text-left">{{ event_detail.price }}</p>
-                    </div>
-                </div>
-                <div class=" flex justify-between items-center border-2 rounded-xl mt-9">
-                    <div class="px-6">
-                        <p class="p-3 font-anjoman text-[#A9AEAE] text-3xl">جایزه نفر اول</p>
-                    </div>
-                    <div class="py-6 pl-5">
-                        <img class="rounded-lg" src="{% get_media_prefix %}{{ event_detail.picture }}" alt="gift-pic">
-                    </div>
+    <div class="w-full sm:w-11/12 md:w-4/5 lg:w-3/5 mx-auto py-2 sm:py-10 px-2 sm:px-8 border-2 border-[#A9AEAE] rounded-xl sm:rounded-2xl text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+        <div class="py-3 sm:py-5">
+            <div class="flex justify-between items-center py-2 px-2 sm:px-5 border-2 border-[#A9AEAE] rounded-lg sm:rounded-xl">
+                <p>ظرفیت</p>
+                <p class="text-[#F00]">{{ event_detail.user_limit }} نفر</p>
+            </div>
+        </div>
 
-                </div>
-                <div class="flex justify-center pt-9">
-                    <a href="{% url 'games_data' game_id=event_detail.game.id %}">
-                    <button class=" bg-[#D9D9D9] text-[#09101F] rounded-2xl w-2/5 py-4 mx-2 text-2xl"> آموزش بازی</a>
-                        <i class="fa-solid fa-circle-question"></i></button>
+        <div class="py-3 sm:py-5">
+            <div class="flex justify-between items-center py-2 px-2 sm:px-5 border-2 border-[#A9AEAE] rounded-lg sm:rounded-xl">
+                <p>ساعت</p>
+                <p class="text-[#F00]">{{ event_detail.end_time|truncatewords:'1' }} | الی | {{ event_detail.start_time|truncatewords:'1' }}</p>
+            </div>
+        </div>
 
-                    <a href="https://idpay.ir/vps-crack">
-                    <button class=" bg-[#D9D9D9] text-[#09101F] rounded-2xl w-2/5 py-4 mx-2 text-2xl">ثبت نام/پرداخت</a>
-                        <i class="fa-solid fa-sack-dollar"></i></button>
+        <div class="py-3 sm:py-5">
+            <div class="flex justify-between items-center py-2 px-2 sm:px-5 border-2 border-[#A9AEAE] rounded-lg sm:rounded-xl">
+                <p>مهلت ثبت نام</p>
+                <p class="text-[#F00]">{{ register_duration_time_str }}</p>
+            </div>
+        </div>
 
+        <div class="py-3 sm:py-5">
+            <div class="flex justify-between items-center py-2 px-2 sm:px-5 border-2 border-[#A9AEAE] rounded-lg sm:rounded-xl">
+                <p>مبلغ ورودی</p>
+                <p class="text-[#F00]">{{ event_detail.price }} تومان</p>
+            </div>
+        </div>
+
+        <div class="py-3 sm:py-5">
+            <div class="flex flex-col-reverse sm:flex-row sm:justify-between items-center py-2 sm:py-5 px-2 sm:px-5 border-2 border-[#A9AEAE] rounded-lg sm:rounded-xl">
+                <p class="pt-2 sm:pt-0">جایزه نفر اول</p>
+                <div class="w-full sm:w-3/5 rounded-md sm:rounded-lg overflow-hidden">
+                    <img src="{% get_media_prefix %}{{ event_detail.picture }}" class="w-full aspect-square sm:aspect-[2/1] object-cover" />
                 </div>
+            </div>
+        </div>
+
+        <div class="flex justify-between items-center pt-5">
+            <div class="flex sm:w-5/12">
+                <a href="{% url 'games_data' game_id=event_detail.game.id %}" class="w-full py-2 md:py-4 px-3 sm:px-5 md:px-8 xl:px-11 rounded-lg sm:rounded-2xl bg-[#D9D9D9] font-bold text-center text-sm sm:text-base lg:text-xl xl:text-2xl 2xl:text-3xl text-black">آموزش بازی <i class="fa-solid fa-circle-question"></i></a>
+            </div>
+
+            <div class="flex sm:w-5/12">
+                <a href="https://idpay.ir/vps-crack" class="w-full py-2 md:py-4 px-3 sm:px-5 md:px-8 xl:px-11 rounded-lg sm:rounded-2xl bg-[#D9D9D9] font-bold text-center text-sm sm:text-base lg:text-xl xl:text-2xl 2xl:text-3xl text-black">ثبت نام/پرداخت <i class="fa-solid fa-sack-dollar"></i></a>
             </div>
         </div>
     </div>

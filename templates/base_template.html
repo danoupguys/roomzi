@@ -1,175 +1,207 @@
 {% load static %}
 <!DOCTYPE html>
-<html dir="rtl" lang="fa">
+<html dir="rtl" lang="fa-IR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width ,initial-scale=1.0">
-    <title>رومزی</title>
-    <link href="{% static 'css/output.css' %}" rel="stylesheet">
-</head>
+        <title>رومزی</title>
 
-<body class="bg-[#09101F] text-[#A9AEAE] font-vazir">
+        <link href="{% static 'css/output.css' %}" rel="stylesheet" />
+    </head>
 
-<header class="container mx-auto border-b-2 border-b-[#A9AEAE] pt-5 max-w-5x1">
-    <div class="flex justify-between items-center">
-        <div class="flex items-center">
-            <img src="{% static 'images/logo.png' %}" alt="logo" width="53"/>
-            <nav class="ps-6 text-xl">
-                <ul class="list-none flex">
-                    <li class="pe-6 hover:drop-shadow-[0px_0px_3px_#F00]"><a
-                            href="{% url 'home_page' %}">صفحه اصلی</a></li>
-                    <li class="pe-6 hover:drop-shadow-[0px_0px_3px_#F00]"><a
-                            href="{% url 'event' %}">ایونت ها <i
-                            class="fa-solid fa-chevron-down text-xs"></i></a></li>
-                    <li class="pe-6 hover:drop-shadow-[0px_0px_3px_#F00]"><a href="{% url 'games' %}"> بازی ها <i
-                            class="fa-solid fa-chevron-down text-xs"></i></a></li>
-                    <li class="pe-6 hover:drop-shadow-[0px_0px_3px_#F00]"><a href="{% url 'about_us' %}">درباره ما</a>
-                    </li>
-                </ul>
-            </nav>
+    <body class="overflow-x-hidden">
+        <header class="py-4 lg:pt-5 lg:pb-0">
+            <div class="container mx-auto lg:border-b-2 lg:border-b-[#599292]">
+                <div class="flex justify-between items-center px-4 lg:px-0">
+                    <div class="block lg:hidden">
+                        <button id="nav-toggle" class="flex justify-center items-center cursor-pointer">
+                            <img src="/static/images/NavButton.svg" class="w-6" />
+                        </button>
+
+                        <div id="mobile-nav-container" class="hidden fixed top-0 right-0 w-screen h-screen backdrop-brightness-50 z-50">
+                            <div id="mobile-nav" class="relative w-full h-full">
+                                <div id="mobile-nav-menu" class="absolute top-0 right-[-66.666667%] sm:right-[-40%] md:right-[-33.333333%] w-2/3 sm:w-2/5 md:w-1/3 h-full bg-[#1A2A4D] transition-[right] duration-500">
+                                    <ul class="list-none text-2xl sm:text-3xl">
+                                        <li class="flex font-bold hover:drop-shadow-[0px_0px_3px_#F00] hover:bg-[#C80815]"><a href="{% url 'home_page' %}" class="w-full px-5 py-5">صفحه اصلی</a></li>
+                                        <li class="flex font-bold hover:drop-shadow-[0px_0px_3px_#F00] hover:bg-[#C80815]"><a href="{% url 'event' %}" class="w-full px-5 py-5">ایونت ها</a></li>
+                                        <li class="flex font-bold hover:drop-shadow-[0px_0px_3px_#F00] hover:bg-[#C80815]"><a href="{% url 'games' %}" class="w-full px-5 py-5">بازی ها</a></li>
+                                        <li class="flex font-bold hover:drop-shadow-[0px_0px_3px_#F00] hover:bg-[#C80815]"><a href="{% url 'about_us' %}" class="w-full px-5 py-5">درباره ما</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hidden lg:flex items-center">
+                        <div class="w-14">
+                            <a href="/" class="w-full">
+                                <img src="{% static 'images/logo.png' %}" class="w-full" />
+                            </a>
+                        </div>
+
+                        <nav class="ps-6 text-xl">
+                            <ul class="flex list-none">
+                                <li class="pe-6 hover:drop-shadow-[0px_0px_3px_#F00]"><a href="{% url 'home_page' %}">صفحه اصلی</a></li>
+                                <li class="pe-6 hover:drop-shadow-[0px_0px_3px_#F00]"><a href="{% url 'event' %}">ایونت ها</a></li>
+                                <li class="pe-6 hover:drop-shadow-[0px_0px_3px_#F00]"><a href="{% url 'games' %}">بازی ها</a></li>
+                                <li class="pe-6 hover:drop-shadow-[0px_0px_3px_#F00]"><a href="{% url 'about_us' %}">درباره ما</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="block lg:hidden">
+                        <a href="/">
+                            <img src="/static/images/RoomziSmall.png" class="w-20" />
+                        </a>
+                    </div>
+
+                    <div class="hidden lg:flex">
+                        <form class="flex items-center justify-between p-[7px] rounded-lg bg-[#D9D9D9] text-sm text-[#09101F] placeholder:text-[#3B404C]" action="{% url 'result' %}">
+                            <input name="searchbar" type="text" class="outline-none bg-inherit" placeholder="جستجو..." />
+                            <button><i class="fa-solid fa-magnifying-glass cursor-pointer"></i></button>
+                        </form>
+
+                        <button name="login-btn" onclick="openPopup()" class="ms-4 p-2 border-2 border-solid border-[#A9AEAE] rounded-lg flex justify-between items-center">
+                            <span class="pe-1 text-xs">ورود/ثبت نام</span>
+                            <i class="fa-solid fa-arrow-right-to-bracket text-[#A9AEAE]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>{% block main %}{% endblock %}</main>
+
+        <div id="Login-popup-container" onclick="closePopup(event)" class="fixed inset-0 justify-center items-center bg-gray-600 bg-opacity-90 hidden">
+            <div id="login-signup" class="bg-[#09101F] text-center rounded-3xl px-28 py-12 shadow-inner">
+                <form method="post" action="{% url 'signin' %}">
+                    {% csrf_token %}
+                    <img class="m-auto" src="/static/images/Roomzi-logo[Recovered].png" width="210px" alt="" />
+                    <div class="pb-4">
+                        <h2 class="text-[#A9AEAE] text-4xl pb-7">ورود | ثبت نام</h2>
+                        <input name="username" placeholder="email" dir="rtl" type="text" class="p-1 rounded-lg outline-none" />
+                        <input name="password" placeholder="password" dir="rtl" type="password" class="p-1 rounded-lg outline-none" />
+                    </div>
+                    <input name="enter" id="enter-btn" class="bg-[#B0B2B7] py-2 px-12 text-2xl rounded-xl text-[#09101F]" type="submit" value="ورود" />
+                </form>
+            </div>
         </div>
-        <div class="flex">
-            <form
-                    class="flex items-center justify-between p-[7px] rounded-lg bg-[#D9D9D9] text-sm text-[#09101F] placeholder:text-[#3B404C]"
-                    action="{% url 'result' %}">
-                <input name="searchbar" type="text" class="outline-none bg-inherit" placeholder="جستجو..."/>
-                <button>
-                    <i class="fa-solid fa-magnifying-glass cursor-pointer"></i>
-                </button>
+        <div id="signup" class="fixed inset-0 justify-center items-center bg-gray-600 bg-opacity-90 hidden">
+            <form action="{% url 'signup' %}" class="w-2/5 bg-[#09101F] rounded-[40px]" method="post">
+                {% csrf_token %}
+                <div class="w-1/4 mx-auto pt-6">
+                    <img src="{% static 'images/Roomzi-logo[Recovered].png' %}" />
+                </div>
+                <div class="w-full flex justify-evenly items-center pe-4">
+                    <div class="w-[45%]">
+                        <div class="flex items-center py-4">
+                            <label class="w-3/12 text-end text-sm pe-2">نام کاربری</label>
+                            <input name="username" type="text" class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]" />
+                        </div>
+                        <div class="flex items-center py-4">
+                            <label class="w-3/12 text-end text-sm pe-2">پسورد</label>
+                            <input name="password1" type="password" class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]" />
+                        </div>
+                        <div class="flex items-center py-4">
+                            <label class="w-3/12 text-end text-sm pe-2">تایید پسورد</label>
+                            <input name="password2" type="password" class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]" />
+                        </div>
+                        <div class="flex items-center py-4">
+                            <label class="w-3/12 text-end text-sm pe-2">نام</label>
+                            <input name="first_name" type="text" class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]" />
+                        </div>
+                        <div class="flex items-center py-4">
+                            <label class="w-3/12 text-end text-sm pe-2">ایمیل</label>
+                            <input name="email" type="text" class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]" />
+                        </div>
+                    </div>
+                    <div class="w-[45%]">
+                        <div class="flex items-center py-4">
+                            <label class="w-5/12 text-end text-sm pe-2">نام خانوادگی</label>
+                            <input name="last_name" type="text" class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]" />
+                        </div>
+                        <div class="flex items-center py-4">
+                            <label class="w-5/12 text-end text-sm pe-2">تاریخ تولد</label>
+                            <input name="birthday-date" type="date" class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]" />
+                        </div>
+                    </div>
+                </div>
+                <div class="mx-auto w-2/5 pt-5">
+                    <div class="relative w-full text-[#09101F] text-xs">
+                        <i class="fa-solid fa-chevron-down absolute left-2 top-[48%] translate-y-[-50%]"></i>
+                        <select class="w-full outline-none py-3 px-2 rounded-lg appearance-none text-xs" required>
+                            <option value="" disabled selected hidden>چگونه با ما آشنا شدید؟</option>
+                            <option value="school">مدرسه</option>
+                            <option value="student">دانش اموزان</option>
+                            <option value="etc">غیره</option>
+                        </select>
+                    </div>
+                    <div class="pt-36 pb-7 w-2/3 mx-auto">
+                        <input name="Register-btn" type="submit" value="ثبت نام" class="bg-[#B0B2B7] text-[#09101F] w-full rounded-2xl py-2 px-9 cursor-pointer" />
+                    </div>
+                </div>
             </form>
-            <button
-                    name="login-btn"
-                    class="ms-4 p-2 border-2 border-solid border-[#A9AEAE] rounded-lg flex justify-between items-center">
-                <span class="pe-1 text-xs">ورود/ثبت نام</span>
-                <i class="fa-solid fa-arrow-right-to-bracket" style="color:#A9AEAE;"></i>
-            </button>
         </div>
-    </div>
-</header>
-<main>
-    {% block main %}{% endblock %}
-</main>
-<div id="Login-popup-container" onclick="closePopup()"
-     class="fixed inset-0 flex justify-center items-center bg-gray-600 bg-opacity-90 hidden">
-    <div id="login-signup" class="bg-[#09101F] text-center rounded-3xl px-28 py-12 shadow-inner">
-        <form method="post" action="{% url 'signin' %}">
-            {% csrf_token %}
-            <img class="m-auto " src="/static/images/Roomzi-logo[Recovered].png" width="210px" alt="">
-            <div class="pb-4">
-                <h2 class="text-[#A9AEAE] text-4xl pb-7">ورود | ثبت نام</h2>
-                <input name="username" placeholder="email" dir="rtl" type="text" class="p-1 rounded-lg outline-none">
-                <input name="password" placeholder="password" dir="rtl" type="password"
-                       class="p-1 rounded-lg outline-none">
-            </div>
-            <input name="enter" id="enter-btn" class="bg-[#B0B2B7] py-2 px-12 text-2xl rounded-xl  text-[#09101F]"
-                   type="submit" value="ورود">
-        </form>
-    </div>
-</div>
-<div id="signup" class="fixed inset-0 flex justify-center items-center bg-gray-600 bg-opacity-90 hidden">
-    <form action="{% url 'signup' %}" class="w-2/5 bg-[#09101F] rounded-[40px]" method="post">
-        {% csrf_token %}
-        <div class="w-1/4 mx-auto pt-6">
-            <img src="{% static 'images/Roomzi-logo[Recovered].png' %}" alt="">
-        </div>
-        <div class="w-full flex justify-evenly items-center pe-4">
-            <div class="w-[45%]">
-                <div class="flex items-center py-4">
-                    <label class="w-3/12 text-end text-sm pe-2">نام کاربری</label>
-                    <input name="username" type="text"
-                           class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]">
-                </div>
-                <div class="flex items-center py-4">
-                    <label class="w-3/12 text-end text-sm pe-2">پسورد</label>
-                    <input name="password1" type="password"
-                           class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]">
-                </div>
-                <div class="flex items-center py-4">
-                    <label class="w-3/12 text-end text-sm pe-2">تایید پسورد</label>
-                    <input name="password2" type="password"
-                           class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]">
-                </div>
-                <div class="flex items-center py-4">
-                    <label class="w-3/12 text-end text-sm pe-2">نام</label>
-                    <input name="first_name" type="text"
-                           class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]">
-                </div>
-                <div class="flex items-center py-4">
-                    <label class="w-3/12 text-end text-sm pe-2">ایمیل</label>
-                    <input name="email" type="text"
-                           class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]">
+        <footer class="bg-[#070B12] py-6">
+            <div class="container mx-auto">
+                <div class="flex flex-wrap justify-around">
+                    <div class="w-full sm:w-1/2 xl:w-1/5 py-4 xl:py-0">
+                        <div class="w-4/5 md:w-2/3 xl:w-full mx-auto">
+                            <h3 class="pb-2 text-center">درباره ما</h3>
+                            <p class="py-1 text-justify text-xs lg:text-sm text-white">مجموعه رومزی یک اتاق جهت انجام بازی های رومیزی(Board games) و گروهی است که برای اولین بار در هنرستان باقرالعلوم افتتاح شد.</p>
+                        </div>
+                    </div>
+
+                    <div class="w-full sm:w-1/2 xl:w-1/4 2xl:w-1/5 py-4 xl:py-0">
+                        <div class="w-4/5 md:w-2/3 xl:w-full mx-auto">
+                            <h3 class="pb-2 text-center">سوالات متداول</h3>
+                            <ul class="list-none">
+                                <li class="py-1 text-center text-xs lg:text-sm text-white">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</li>
+                                <li class="py-1 text-center text-xs lg:text-sm text-white">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</li>
+                                <li class="py-1 text-center text-xs lg:text-sm text-white">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</li>
+                                <li class="py-1 text-center text-xs lg:text-sm text-white">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="w-full sm:w-1/2 xl:w-1/5 py-4 xl:py-0">
+                        <div class="w-4/5 md:w-2/3 xl:w-full mx-auto">
+                            <h3 class="pb-2 text-center">ما را در صفحات مجازی دنبال کنید!</h3>
+                            <div class="flex justify-center">
+                                <ul class="list-none">
+                                    {% for socisl_media in SocialMedia %}
+                                    <li class="flex justify-end items-center py-1 text-xs lg:text-sm">
+                                        <a href="{{ social_media.link }}" class="flex">
+                                            <p class="pe-2 text-white">{{ socisl_media.title }}</p>
+                                            <img src="{% get_media_prefix %}{{ socisl_media.icon }}" class="w-6 aspect-square" />
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center xl:justify-start items-center self-center w-full sm:w-1/2 xl:w-1/5 py-4 xl:py-0">
+                        <div class="flex w-4/5 md:w-2/3 xl:w-full">
+                            <div class="w-1/2">
+                                <img src="/static/images/samandehi.png" class="w-full aspect-square" />
+                            </div>
+
+                            <div class="w-1/2">
+                                <img src="/static/images/enamad-logo.png" class="w-full aspect-square" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="w-[45%]">
-                <div class="flex items-center py-4">
-                    <label class="w-5/12 text-end text-sm pe-2">نام خانوادگی</label>
-                    <input name="last_name" type="text"
-                           class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]">
-                </div>
-                <div class="flex items-center py-4">
-                    <label class="w-5/12 text-end text-sm pe-2">تاریخ تولد</label>
-                    <input name="birthday-date" type="date"
-                           class="outline-none rounded-lg py-2 w-7/12 px-2 text-xs text-[#09101F]">
-                </div>
-            </div>
-        </div>
-        <div class="mx-auto w-2/5 pt-5">
-            <div class="relative w-full text-[#09101F] text-xs">
-                <i class="fa-solid fa-chevron-down absolute left-2 top-[48%] translate-y-[-50%]"></i>
-                <select class="w-full outline-none py-3 px-2 rounded-lg appearance-none text-xs"
-                        style="-webkit-appearance: none;" required>
-                    <option value="" disabled selected hidden>چگونه با ما آشنا شدید؟</option>
-                    <option value="school">مدرسه</option>
-                    <option value="student">دانش اموزان</option>
-                    <option value="etc">غیره</option>
-                </select>
-            </div>
-            <div class="pt-36 pb-7 w-2/3 mx-auto">
-                <input name="Register-btn" type="submit" value="ثبت نام"
-                       class="bg-[#B0B2B7] text-[#09101F] w-full rounded-2xl py-2 px-9 cursor-pointer"/>
-            </div>
-        </div>
-    </form>
-</div>
-<footer class="bg-[#070B12]">
-    <div class="footer-up h-60 mx-44 flex items-center justify-between">
-        <div class="about text-center">
-            <h3 class="text-[#A9AEAE]">درباره ما</h3>
-            <p dir="rtl" class="w-52 text-white text-center ">
-                مجموعه رومزی یک اتاق جهت انجام بازی های رومیزی(Board games) و گروهی است که برای اولین بار در هنرستان
-                باقرالعلوم افتتاح شد.
-            </p>
-        </div>
-        <div class="questions text-center">
-            <h3 class="text-[#A9AEAE]">سوالات متداول</h3>
-            <p class="text-white my-2 ">لورم ایپسوم متن ساختگی با تولید سادگی</p>
-            <p class="text-white my-2 ">لورم ایپسوم متن ساختگی با تولید سادگی</p>
-            <p class="text-white my-2 ">لورم ایپسوم متن ساختگی با تولید سادگی</p>
-        </div>
-        {% for socisl_media in SocialMedia %}
-            <div class="social-media">
-                <div class="my-4 instagram flex">
-                    <img class="w-5" src="{% get_media_prefix %}{{ socisl_media.icon }}" alt="">
-                    <p class="text-white"><a href="{{ social_media.link }}">{{ socisl_media.title }}</a></p>
-                </div>
-            </div>
-        {% endfor %}
-        <div class="logos flex">
-            <div class="p-2">
-                <img class="w-24 " src="/static/images/samandehi.png" alt="">
-            </div>
-            <div class="p-2">
-                <img class="w-24 " src="/static/images/enamad-logo.png" alt="">
-            </div>
-        </div>
-    </div>
-</footer>
-<script src="{% static 'JS/games-data.js' %}"></script>
-<script src="{% static 'JS/slider.js' %}"></script>
-<script src="{% static 'JS/pop-up.js' %}"></script>
-<script src="https://kit.fontawesome.com/c37d4d6158.js" crossorigin="anonymous"></script>
-{% block script %}{% endblock %}
-</body>
+        </footer>
+        <script src="{% static 'JS/games-data.js' %}"></script>
+        <script src="{% static 'JS/slider.js' %}"></script>
+        <script src="{% static 'JS/pop-up.js' %}"></script>
+        <script src="{% static 'JS/mobile-navbar.js' %}"></script>
+        <script src="https://kit.fontawesome.com/c37d4d6158.js" crossorigin="anonymous"></script>
+        {% block script %}{% endblock %}
+    </body>
 </html>

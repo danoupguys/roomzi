@@ -1,44 +1,48 @@
-{% extends "base_template.html" %}
-{% load static %}
-{% block main %}
-    <div class="container mx-auto">
-        <h1 class=" text-[#A9AEAE] pb-5 font-[Anjoman] text-[40px] "> مجموعه رومزی</h1>
-        {% for aboutus in AboutUs %}
-            <p class="text-[#A9AEAE] font-[Anjoman] text-[20px] text-justify">{{ aboutus.description }}</p>
-        {% endfor %}
-    </div>
-    <div class="container  m-auto">
-        <h2 class=" text-[#A9AEAE] pb-5 font-[Anjoman] text-[30px] pt-[97px]">اعضای تیم ما</h2>
-        <div class="flex justify-between pb-10 pt-8">
-            {% for team_members in TeamMembers %}
-                <div class="w-[calc(100%/10)]">
-                    <img class="rounded-full w-full aspect-square"
-                         src="{% get_media_prefix %}{{ team_members.picture }}" alt="user">
-                    <div class="text-center pt-3 text-[#A9AEAE] text-2xl font-[Anjoman]">
-                        <p class="pb-2">{{ team_members.full_name }}</p>
-                        <p class="text-base">{{ team_members.get_role_display }}</p>
+{% extends "base_template.html" %} {% load static %} {% block main %}
+<div class="container mx-auto py-12 px-3 md:px-0">
+    <h1 class="text-[#A9AEAE] pb-5 font-bold text-3xl md:text-4xl">مجموعه رومزی</h1>
+
+    {% for aboutus in AboutUs %}
+    <p class="text-[#A9AEAE] md:text-xl text-justify leading-9">{{ aboutus.description }}</p>
+    {% endfor %}
+
+    <h2 class="text-[#A9AEAE] pt-32 pb-5 font-bold text-3xl md:text-4xl">اعضای تیم ما</h2>
+    <div class="flex flex-wrap justify-between sm:justify-center xl:justify-between pt-8">
+        {% for team_members in TeamMembers %}
+        <div class="team-member-card w-2/5 sm:w-1/4 md:w-1/5 lg:w-1/6 xl:w-[calc(100%/8)]">
+            <div class="w-full py-3">
+                <div class="w-full rounded-full overflow-hidden">
+                    <img src="{% get_media_prefix %}{{ team_members.picture }}" class="w-full aspect-square object-cover" />
+                </div>
+
+                <div class="w-full pt-3 text-center break-words">
+                    <div class="pb-1">
+                        <p class="font-bold text-sm md:text-base">{{ team_members.full_name }}</p>
+                    </div>
+
+                    <div class="pt-1">
+                        <p class="text-xs md:text-sm">{{ team_members.get_role_display }}</p>
                     </div>
                 </div>
-            {% endfor %}
-
-        </div>
-        <div class="container  m-auto ">
-            <h2 class=" text-[#A9AEAE] pb-5 font-[Anjoman] text-[30px] pt-[97px]">راه های ارتباطی با ما</h2>
-            <div class="flex justify-between pb-10 pt-8">
-                {% for socisl_media in SocialMedia %}
-                    <div class="w-[calc(100%/8)]">
-                        <a href="{{ social_media.link }}">
-                            <div class="w-full">
-                                <img src="{% get_media_prefix %}{{ socisl_media.icon }}"
-                                     class="w-full object-fill aspect-square" alt="">
-                            </div>
-                            <div class="text-center pt-[24px]">
-                                <span class="text-[#A9AEAE] text-[30px] font-[Anjoman]">{{ socisl_media.title }}</span>
-                            </div>
-                        </a>
-                    </div>
-                {% endfor %}
             </div>
         </div>
+        {% endfor %}
     </div>
+
+    <h2 class="text-[#A9AEAE] pt-32 pb-5 font-bold text-3xl md:text-4xl">صفحات مجازی</h2>
+    <div class="flex flex-wrap justify-between pt-8">
+        {% for socisl_media in SocialMedia %}
+        <div class="w-2/5 md:w-1/5 xl:w-[calc(100%/8)] py-3">
+            <a href="{{ social_media.link }}">
+                <div class="w-full">
+                    <img src="{% get_media_prefix %}{{ socisl_media.icon }}" class="w-full object-fill aspect-square" alt="" />
+                </div>
+                <div class="text-center pt-3">
+                    <p class="font-bold text-xl text-[#A9AEAE]">{{ socisl_media.title }}</p>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

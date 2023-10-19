@@ -1,24 +1,20 @@
-{% extends "base_template.html" %}
-{% load static %}
-{% block main %}
-<div class="container mx-auto">
-    <div class="py-14">
-        <div class="rounded-lg overflow-hidden">
-            <img class="w-full text-center" src="/static/images/Rectangle-25.png" alt="">
-        </div>
-    </div>
-    <div class="flex justify-between items-center flex-wrap content-between">
+{% extends "base_template.html" %} {% load static %} {% block main %}
+<div class="container mx-auto pt-7 pb-12">
+    <div class="flex flex-wrap">
         {% for result in results %}
-            <div class="w-1/5">
-                <a href="{% url 'games_data' game_id=result.id %}">
-                    <div class="flex items-center justify-between border-4 border-[#A9AEAE] rounded-[40px] ps-9 pe-6 py-5">
-                        <p class="text-5xl pe-8">{{ result.name }}</p>
-                        <div class="rounded-3xl border-2 border-[#A9AEAE] overflow-hidden max-w-max">
-                            <img src="{% get_media_prefix %}{{ result.picture }}" class="aspect-square object-cover h-full">
-                        </div>
+        <div class="game-card">
+            <a href="{% url 'games_data' game_id=result.id %}" class="w-11/12 sm:w-5/6">
+                <div class="flex items-center w-full p-3 xl:p-5 bg-[#1A2A4D] border-2 border-[#A9AEAE] rounded-2xl xl:rounded-3xl">
+                    <div class="w-3/5 overflow-hidden">
+                        <p class="text-start font-bold text-sm sm:text-sm md:text-base lg:text-xl xl:text-2xl break-words">{{ result.name }}</p>
                     </div>
-                </a>
-            </div>
+    
+                    <div class="w-2/5 border-2 border-[#A9AEAE] rounded-lg xl:rounded-xl overflow-hidden">
+                        <img src="{% get_media_prefix %}{{ result.picture }}" class="w-full aspect-square object-cover" />
+                    </div>
+                </div>
+            </a>
+        </div>
         {% endfor %}
     </div>
 </div>

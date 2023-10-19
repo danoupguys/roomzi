@@ -1,13 +1,13 @@
-const popup = document.getElementById("Login-popup-container")
+const popup = document.getElementById("Login-popup-container");
 
 function openPopup() {
-    popup.classList.remove("hidden")
+    popup.classList.remove("hidden");
+    popup.classList.add("flex");
 }
 
-function closePopup(params) {
-
-    console.log(params.target)
-    if (params.target.id === "Login-popup-container" || params.target.id === "enter-btn") {
-        popup.classList.add("hidden")
+function closePopup(event) {
+    if (event.currentTarget === event.target) {
+        popup.classList.remove("flex");
+        popup.classList.add("hidden");
     }
 }
